@@ -1,0 +1,253 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueAI - 로그인</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 로그인 페이지 전용 스타일 */
+        body {
+            background-color: #343541;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .auth-container {
+            width: 100%;
+            max-width: 420px;
+            padding: 30px;
+            background-color: #202123;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+        
+        .auth-logo {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .auth-logo h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e90ff;
+            margin: 0;
+        }
+        
+        .auth-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ececf1;
+            margin-bottom: 25px;
+        }
+        
+        .auth-form {
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #9ca3af;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #565869;
+            border-radius: 8px;
+            background-color: #40414f;
+            color: #ececf1;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        .form-control:focus {
+            border-color: #1e90ff;
+            outline: none;
+        }
+        
+        .auth-btn {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .auth-btn:hover {
+            background-color: #0e80ef;
+        }
+        
+        .auth-links {
+            display: flex;
+            justify-content: space-between;
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        .auth-links a {
+            color: #1e90ff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .auth-links a:hover {
+            color: #0e80ef;
+            text-decoration: underline;
+        }
+        
+        .auth-separator {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            color: #9ca3af;
+        }
+        
+        .auth-separator::before,
+        .auth-separator::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: #565869;
+        }
+        
+        .auth-separator span {
+            padding: 0 15px;
+            font-size: 0.9rem;
+        }
+        
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-btn {
+            padding: 10px 15px;
+            border: 1px solid #565869;
+            border-radius: 8px;
+            background-color: #40414f;
+            color: #ececf1;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex: 1;
+        }
+        
+        .social-btn:hover {
+            background-color: #4b4c5d;
+        }
+        
+        .messages {
+            margin-bottom: 20px;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .message {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .message.error {
+            background-color: rgba(255, 77, 79, 0.2);
+            color: #ff4d4f;
+            border-left: 3px solid #ff4d4f;
+        }
+        
+        .message.success {
+            background-color: rgba(82, 196, 26, 0.2);
+            color: #52c41a;
+            border-left: 3px solid #52c41a;
+        }
+        
+        .message.info {
+            background-color: rgba(24, 144, 255, 0.2);
+            color: #1890ff;
+            border-left: 3px solid #1890ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-logo">
+            <h1>BlueAI</h1>
+        </div>
+        
+        <h2 class="auth-title">로그인</h2>
+        
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li class="message {{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
+        <form class="auth-form" method="post" action="{% url 'accounts:login' %}">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="id_username">아이디 또는 이메일</label>
+                {{ form.username }}
+                {% if form.username.errors %}
+                <div class="error-message">{{ form.username.errors }}</div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="id_password">비밀번호</label>
+                {{ form.password }}
+                {% if form.password.errors %}
+                <div class="error-message">{{ form.password.errors }}</div>
+                {% endif %}
+            </div>
+            
+            <button type="submit" class="auth-btn">로그인</button>
+            
+            <div class="auth-links">
+                <a href="{% url 'accounts:password_reset' %}">비밀번호를 잊으셨나요?</a>
+                <a href="{% url 'accounts:register' %}">회원가입</a>
+            </div>
+        </form>
+        
+        <div class="auth-separator">
+            <span>또는</span>
+        </div>
+        
+        <div class="social-login">
+            <button type="button" class="social-btn">
+                <i class="fab fa-google"></i>
+                Google
+            </button>
+            <button type="button" class="social-btn">
+                <i class="fab fa-github"></i>
+                GitHub
+            </button>
+        </div>
+    </div>
+</body>
+</html>

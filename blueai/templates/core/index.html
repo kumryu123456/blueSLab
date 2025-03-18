@@ -1,0 +1,546 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueAI - 자동화 도우미</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- 아이콘 폰트 추가 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- B 로고 버튼 (사이드바 트리거 재디자인) -->
+    <div id="sidebarTrigger" class="sidebar-trigger">
+        <div id="logoIcon" class="logo-icon">B</div>
+    </div>
+
+    <!-- 사이드바 -->
+    <div id="sidebar" class="collapsed">
+        <!-- 여기에 로그인 상태에 따른 메뉴 변경 -->
+        <div class="sidebar-header">
+            <!-- 사이드바 핀 버튼 -->
+            <div class="sidebar-pin" id="sidebarPin">
+                <i class="fas fa-thumbtack"></i>
+                <span class="pin-tooltip">사이드바 고정</span>
+            </div>
+        </div>
+        
+        <!-- 로그인/회원가입 버튼 - 비로그인 시에만 표시 -->
+        {% if not user.is_authenticated %}
+        <div class="auth-buttons">
+            <a href="{% url 'accounts:login' %}" class="primary-button">로그인</a>
+            <a href="{% url 'accounts:register' %}" class="secondary-button">회원가입</a>
+        </div>
+        {% endif %}
+
+        <!-- 새 채팅 버튼 - 항상 표시 -->
+        <button id="newChat" class="primary-button">+ 새 채팅</button>
+        
+        <!-- 카테고리 탭 -->
+        <div class="category-tabs">
+            <button class="tab-button active" data-category="recent">최근 작업</button>
+            <button class="tab-button" data-category="favorites">즐겨찾기</button>
+        </div>
+        
+        <!-- 최근 채팅 목록 -->
+        <div id="recentTasksContainer" class="task-container">
+            <ul id="taskList" class="task-list">
+                <!-- 작업 목록은 JavaScript에서 동적으로 추가됨 -->
+            </ul>
+            <button id="viewAllTasks" class="view-all-button" style="display: none;">전체 보기</button>
+        </div>
+        
+        <!-- 즐겨찾기 목록 -->
+        <div id="favoritesContainer" class="task-container" style="display: none;">
+            <ul id="favoritesList" class="task-list">
+                <!-- 즐겨찾기 목록은 JavaScript에서 동적으로 추가됨 -->
+            </ul>
+        </div>
+        
+        <!-- 하단 메뉴 - 업데이트된 드롭다운 (위치 및 방향 수정) -->
+        <div class="sidebar-footer">
+            <div class="footer-button-container">
+                <button id="settingsBtn" class="footer-button">자세히 알아보기</button>
+                <div class="footer-dropdown settings-dropdown">
+                    <a href="#" class="dropdown-link dropdown-special">
+                        blueSLAP에 대하여
+                        <i class="fas fa-external-link-alt link-icon"></i>
+                    </a>
+                    <div class="dropdown-extra-separator"></div>
+                    <a href="#" class="dropdown-link">
+                        소비자 이용약관
+                        <i class="fas fa-external-link-alt link-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        이용 정책
+                        <i class="fas fa-external-link-alt link-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        개인정보 처리방침
+                        <i class="fas fa-external-link-alt link-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        개인정보 선택사항
+                        <i class="fas fa-external-link-alt link-icon"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-button-container">
+                <button id="helpBtn" class="footer-button">도움말</button>
+                <div class="footer-dropdown help-dropdown">
+                    <a href="#" class="dropdown-link">
+                        BlueAI 사용법
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        자주 묻는 질문
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        문제 신고하기
+                    </a>
+                </div>
+            </div>
+            <div class="footer-button-container">
+                <button id="langBtn" class="footer-button">언어</button>
+                <div class="footer-dropdown lang-dropdown">
+                    <a href="#" class="dropdown-link active">
+                        한국어
+                        <i class="fas fa-check check-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        English
+                        <i class="fas fa-check check-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        日本語
+                        <i class="fas fa-check check-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        中文
+                        <i class="fas fa-check check-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        Français
+                        <i class="fas fa-check check-icon"></i>
+                    </a>
+                    <a href="#" class="dropdown-link">
+                        Português
+                        <i class="fas fa-check check-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div id="main" class="sidebar-collapsed">
+        <!-- 상단 헤더 -->
+        <div id="header">
+            <div class="left-section">
+            </div>
+            <h1 id="taskTitle" class="header-title" style="display: none;">테스트 작업</h1>
+            <!-- 서브페이지 제목 드롭다운 메뉴 -->
+            <div class="title-dropdown">
+                <a href="#" class="dropdown-item rename">
+                    <i class="fas fa-edit"></i>
+                    이름 변경
+                </a>
+                <a href="#" class="dropdown-item delete">
+                    <i class="fas fa-trash-alt"></i>
+                    삭제
+                </a>
+            </div>
+            <div class="right-section">
+                <button id="shareBtn" class="utility-button tooltip-container" style="display: none;">
+                    <i class="fas fa-share-alt"></i>
+                    <span class="tooltip">공유</span>
+                </button>
+                <button id="favoriteBtn" class="utility-button tooltip-container" style="display: none;">
+                    <i class="far fa-star"></i>
+                    <span class="tooltip">즐겨찾기</span>
+                </button>
+                <button id="logDiaryBtn" class="utility-button tooltip-container" style="display: none;">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span class="tooltip">Log Diary</span>
+                </button>
+                {% if user.is_authenticated %}
+                <div class="user-container">
+                    <button id="userBtn" class="user-button">{{ user.get_initial|default:'?' }}</button>
+                    <!-- 사용자 드롭다운 메뉴 (프로젝트 선택 기능 복원) -->
+                    <div class="user-dropdown">
+                        <div class="dropdown-header">
+                            {{ user.get_display_name }}님의 BlueAI
+                            <div class="user-role">
+                                host
+                                <span class="user-role-tag">{{ user.get_plan_display_name }}</span>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn"><i class="fas fa-cog"></i></button>
+                                <button class="quick-action-btn"><i class="fas fa-user-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="dropdown-separator"></div>
+                        
+                        <!-- 프로젝트 선택 섹션 (복원된 기능) -->
+                        <div class="dropdown-section projects-section">
+                            <div class="dropdown-subheader">프로젝트</div>
+                            <ul class="project-list">
+                                {% for project in current_user_projects %}
+                                <li class="project-item {% if current_project.id == project.id %}active-project{% endif %}" data-project-id="{{ project.id }}">
+                                    <div class="project-icon">{{ project.name|first }}</div>
+                                    <div class="project-info">
+                                        <div class="project-name">{{ project.name }}</div>
+                                        <div class="project-owner">{{ project.owner.get_display_name }}</div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                                
+                                {% for project in shared_projects %}
+                                <li class="project-item {% if current_project.id == project.id %}active-project{% endif %}" data-project-id="{{ project.id }}">
+                                    <div class="project-icon">{{ project.name|first }}</div>
+                                    <div class="project-info">
+                                        <div class="project-name">{{ project.name }}</div>
+                                        <div class="project-owner">{{ project.owner.get_display_name }} (공유)</div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        
+                        <div class="dropdown-separator"></div>
+                        <div class="dropdown-section">
+                            <a href="{% url 'accounts:profile' %}" class="dropdown-item"><i class="fas fa-user"></i> 프로필</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-crown"></i> 플랜 업그레이드</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-sliders-h"></i> BlueAI 맞춤 설정</a>
+                            <a href="#" class="dropdown-item windows-app"><i class="fas fa-download"></i> Windows 앱 다운로드</a>
+                        </div>
+                        <div class="dropdown-separator"></div>
+                        <div class="dropdown-section">
+                            <form id="logout-form" method="post" action="{% url 'accounts:logout' %}" class="logout-form">
+                                {% csrf_token %}
+                                <button type="submit" class="logout-button">
+                                    <i class="fas fa-sign-out-alt"></i> 로그아웃
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="login-buttons">
+                    <a href="{% url 'accounts:login' %}" class="primary-button">로그인</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- 첫 페이지 내용 (처음 방문 시) -->
+        <div id="welcomePage" class="welcome-page">
+            <div class="welcome-container">
+                <div class="logo-container">
+                    <h1 class="logo">BlueAI</h1>
+                </div>
+                <h2 class="welcome-message">
+                    {% if user.is_authenticated %}
+                    오늘도 잘 부탁드립니다, <span class="user-name-text">{{ user.get_display_name }}</span>님
+                    {% else %}
+                    환영합니다! BlueAI와 함께 시작하세요
+                    {% endif %}
+                </h2>
+                
+                <div class="input-wrapper">
+                    <div class="main-input-container">
+                        <!-- 모델 선택 및 응답 스타일 선택 영역 개선 - 모델과 사고모드 통합 -->
+                        <div class="model-options">
+                            <div class="model-selector">
+                                <button class="model-button">
+                                    <span class="model-name">Quantum 1.0 Feynman</span>
+                                    <i class="fas fa-check model-check"></i>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="thinking-mode">사고모드</div>
+                                <div class="model-dropdown">
+                                    <div class="model-option selected">
+                                        <div class="model-option-name">Quantum 1.0 Feynman</div>
+                                        <i class="fas fa-check model-check"></i>
+                                    </div>
+                                    <div class="model-option">
+                                        <div class="model-option-name">Quantum 1.0 Basic</div>
+                                    </div>
+                                    <div class="model-option">
+                                        <div class="model-option-name">Quantum 1.0 Expert</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="style-selector">
+                                <button class="style-button">
+                                    <i class="fas fa-pen-fancy"></i>
+                                    <span>일반</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="style-dropdown">
+                                    <div class="style-option selected">
+                                        <div>
+                                            <div class="style-option-name">일반</div>
+                                            <div class="style-option-desc">Quantum의 기본 응답</div>
+                                        </div>
+                                        <i class="fas fa-check style-check"></i>
+                                    </div>
+                                    <div class="style-option">
+                                        <div>
+                                            <div class="style-option-name">간결한</div>
+                                            <div class="style-option-desc">짧은 응답과 더 많은 메시지</div>
+                                        </div>
+                                    </div>
+                                    <div class="style-option">
+                                        <div>
+                                            <div class="style-option-name">설명적인</div>
+                                            <div class="style-option-desc">사용자 관점의 세부적인 응답</div>
+                                        </div>
+                                    </div>
+                                    <div class="style-option">
+                                        <div>
+                                            <div class="style-option-name">격식있는</div>
+                                            <div class="style-option-desc">명확하고 체계적인 응답</div>
+                                        </div>
+                                    </div>
+                                    <div class="style-create">
+                                        <i class="fas fa-plus"></i>
+                                        스타일 생성 및 편집
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 텍스트 영역 -->
+                        <textarea id="mainInput" placeholder="오늘은 어떤 것을 대신해드릴까요?" class="main-input" rows="1"></textarea>
+                        
+                        <!-- 업로드 툴바 개선 (아이콘만 남기고 툴팁 적용) -->
+                        <div class="input-tools">
+                            <button id="mainFileUploadBtn" class="tool-button tooltip-container">
+                                <i class="fas fa-paperclip"></i>
+                                <span class="tooltip">파일 업로드 (최대 20개, 각 30MB)</span>
+                            </button>
+                            <div class="tool-separator"></div>
+                            <button class="tool-button tooltip-container">
+                                <i class="fas fa-camera"></i>
+                                <span class="tooltip">스크린샷 캡처</span>
+                            </button>
+                            <div class="tool-separator"></div>
+                            <button class="tool-button tooltip-container">
+                                <i class="fab fa-github"></i>
+                                <span class="tooltip">GitHub</span>
+                            </button>
+                            <div class="tool-separator"></div>
+                            <button class="tool-button tooltip-container">
+                                <i class="fab fa-google-drive"></i>
+                                <span class="tooltip">Google Drive</span>
+                            </button>
+                            <input type="file" id="mainFileUpload" hidden multiple>
+                        </div>
+                        
+                        <!-- 전송 버튼 (위치 조정) -->
+                        <button id="mainEnterBtn" class="main-enter-btn">
+                            <i class="fas fa-microphone mic-icon"></i>
+                            <i class="fas fa-paper-plane send-icon" style="display: none;"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="example-tasks">
+                    <h3>자주 사용하는 작업</h3>
+                    <div class="task-examples">
+                        <div class="example-card" data-prompt="나라장터에서 RPA 공고를 검색해서 엑셀로 저장해줘">
+                            <div class="example-icon">🔍</div>
+                            <div class="example-title">나라장터 공고 검색</div>
+                        </div>
+                        <div class="example-card" data-prompt="오늘 뉴스를 요약해주고 감정 분석해서 음악 추천해줘">
+                            <div class="example-icon">📰</div>
+                            <div class="example-title">뉴스 요약 및 음악 추천</div>
+                        </div>
+                        <div class="example-card" data-prompt="내 블로그용 웹사이트를 자동으로 생성해줘">
+                            <div class="example-icon">🌐</div>
+                            <div class="example-title">웹사이트 생성</div>
+                        </div>
+                        <div class="example-card" data-prompt="날씨 정보를 이미지로 저장해줘">
+                            <div class="example-icon">☀️</div>
+                            <div class="example-title">날씨 정보 이미지화</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 대화 페이지 (명령어 입력 후) -->
+        <div id="chatPage" class="chat-page" style="display: none;">
+            <!-- 대화창 -->
+            <div id="chatWindow">
+                <!-- 메시지는 JavaScript에서 동적으로 추가됨 -->
+            </div>
+
+            <!-- 입력 컨테이너 - Claude 3.7 스타일로 수정 -->
+            <div id="inputContainer">
+                <div class="input-flex-container">
+                    <!-- 서브페이지 모델 선택 영역 추가 -->
+                    <div class="chat-model-options">
+                        <div class="model-selector">
+                            <button class="model-button">
+                                <span class="model-name">Quantum 1.0 Feynman</span>
+                                <i class="fas fa-check model-check"></i>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="thinking-mode">사고모드</div>
+                            <div class="model-dropdown">
+                                <div class="model-option selected">
+                                    <div class="model-option-name">Quantum 1.0 Feynman</div>
+                                    <i class="fas fa-check model-check"></i>
+                                </div>
+                                <div class="model-option">
+                                    <div class="model-option-name">Quantum 1.0 Basic</div>
+                                </div>
+                                <div class="model-option">
+                                    <div class="model-option-name">Quantum 1.0 Expert</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="style-selector">
+                            <button class="style-button">
+                                <i class="fas fa-pen-fancy"></i>
+                                <span>일반</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="style-dropdown">
+                                <div class="style-option selected">
+                                    <div>
+                                        <div class="style-option-name">일반</div>
+                                        <div class="style-option-desc">Quantum의 기본 응답</div>
+                                    </div>
+                                    <i class="fas fa-check style-check"></i>
+                                </div>
+                                <div class="style-option">
+                                    <div>
+                                        <div class="style-option-name">간결한</div>
+                                        <div class="style-option-desc">짧은 응답과 더 많은 메시지</div>
+                                    </div>
+                                </div>
+                                <div class="style-option">
+                                    <div>
+                                        <div class="style-option-name">설명적인</div>
+                                        <div class="style-option-desc">사용자 관점의 세부적인 응답</div>
+                                    </div>
+                                </div>
+                                <div class="style-option">
+                                    <div>
+                                        <div class="style-option-name">격식있는</div>
+                                        <div class="style-option-desc">명확하고 체계적인 응답</div>
+                                    </div>
+                                </div>
+                                <div class="style-create">
+                                    <i class="fas fa-plus"></i>
+                                    스타일 생성 및 편집
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 입력 영역 -->
+                    <textarea id="userInput" placeholder="오늘은 어떤 것을 대신해드릴까요?" rows="1"></textarea>
+                    
+                    <!-- 서브페이지 입력창 도구 영역 -->
+                    <div class="chat-input-tools">
+                        <button id="fileUploadBtn" class="tool-button tooltip-container">
+                            <i class="fas fa-paperclip"></i>
+                            <span class="tooltip">파일 업로드</span>
+                        </button>
+                        <div class="tool-separator"></div>
+                        <button class="tool-button tooltip-container">
+                            <i class="fas fa-camera"></i>
+                            <span class="tooltip">스크린샷 캡처</span>
+                        </button>
+                        <div class="tool-separator"></div>
+                        <button class="tool-button tooltip-container">
+                            <i class="fab fa-github"></i>
+                            <span class="tooltip">GitHub</span>
+                        </button>
+                        <div class="tool-separator"></div>
+                        <button class="tool-button tooltip-container">
+                            <i class="fab fa-google-drive"></i>
+                            <span class="tooltip">Google Drive</span>
+                        </button>
+                        <input type="file" id="fileUpload" hidden multiple>
+                    </div>
+                    
+                    <!-- 전송 버튼 -->
+                    <button id="enterBtn" class="send-button">
+                        <i class="fas fa-microphone mic-icon"></i>
+                        <i class="fas fa-paper-plane send-icon" style="display: none;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 전체 작업 기록 모달 -->
+        <div id="allTasksModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>전체 작업 기록</h2>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="작업 검색...">
+                    </div>
+                    <div class="all-tasks-list">
+                        <!-- 모든 작업 기록이 여기에 표시됨 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 대화 기록 사이드 패널 -->
+        <div id="logDiaryPanel" class="log-diary-panel">
+            <div class="log-diary-header">
+                <h3>Log Diary</h3>
+                <button class="close-panel">&times;</button>
+            </div>
+            <div class="log-diary-content">
+                <!-- 대화 기록 내용이 여기에 표시됨 -->
+            </div>
+        </div>
+    </div>
+
+    {% csrf_token %} <!-- CSRF 토큰 추가 -->
+    <script>
+        // 로그인 상태 변수를 JavaScript로 전달
+        window.isAuthenticated = {% if user.is_authenticated %}true{% else %}false{% endif %};
+        
+        {% if user.is_authenticated %}
+        window.userDisplayName = "{{ user.get_display_name }}";
+        window.userInitial = "{{ user.get_initial|default:'' }}";
+        window.userPlan = "{{ user.plan }}";
+        {% endif %}
+    
+        // CSRF 토큰 가져오기
+        var csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+        var apiUrls = {
+            processInput: "{% url 'core:process_input' %}",
+            getTasks: "{% url 'core:get_tasks' %}",
+            updateConversation: "{% url 'core:update_conversation' %}",
+            executeTask: "{% url 'core:execute_task' %}",
+            updateTaskTitle: "{% url 'core:update_task_title' %}",
+            toggleFavorite: function(taskId) {
+                return "{% url 'core:toggle_favorite' task_id=0 %}".replace('0', taskId);
+            },
+            getFavorites: "{% url 'core:get_favorites' %}",
+            deleteTask: function(taskId) {
+                return "{% url 'core:delete_task' task_id=0 %}".replace('0', taskId);
+            },
+            getTask: function(taskId) {
+                return "{% url 'core:get_task' task_id=0 %}".replace('0', taskId);
+            },
+            switchProject: "{% url 'accounts:switch_project' %}"
+        };
+    </script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

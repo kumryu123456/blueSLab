@@ -1,0 +1,1709 @@
+/* 기본 스타일 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    background-color: #343541;
+    color: #ececf1;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 스크롤바 스타일링 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #565869;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #676980;
+}
+
+/* B로고 (애니메이션 추가) */
+.logo-icon {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    width: 36px;
+    text-align: center;
+    line-height: 36px;
+}
+
+/* 로고 애니메이션 스타일 - 우측으로 확장 */
+.logo-expanded {
+    width: auto;
+    padding: 0 10px;
+}
+
+/* 사이드바 트리거 버튼 - 재디자인 */
+.sidebar-trigger {
+    position: fixed;
+    left: 10px;
+    top: 10px; /* 상단으로 위치 이동 */
+    width: 36px;
+    height: 36px;
+    background-color: #1e90ff;
+    border-radius: 50%;
+    z-index: 1100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.sidebar-trigger:hover {
+    transform: scale(1.1);
+}
+
+/* B 로고 호버 시 텍스트 확장 - 우측으로만 */
+.sidebar-trigger:hover .logo-icon:not(.logo-expanded) {
+    text-align: left;
+    padding-left: 0;
+}
+
+.sidebar-trigger:hover .logo-icon:not(.logo-expanded)::after {
+    content: "lueAI";
+    margin-left: -2px;
+}
+
+/* 사이드바 스타일 */
+#sidebar {
+    width: 260px;
+    background-color: #202123;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+#sidebar.collapsed {
+    transform: translateX(-260px);
+}
+
+/* 사이드바 호버 딜레이 처리를 위한 스타일 */
+#sidebar.hover-delay {
+    transition-delay: 0.25s; /* 사이드바가 닫히는 딜레이 */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: flex-end; /* BlueAI 제목 제거 후 핀 버튼만 오른쪽 정렬 */
+    align-items: center;
+    padding: 12px 10px;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    height: 40px; /* 사이드바 헤더 높이 설정 */
+}
+
+/* 사이드바 제목 숨김 */
+.sidebar-header h1 {
+    display: none;
+}
+
+/* 사이드바 고정 핀 아이콘 추가 */
+.sidebar-pin {
+    color: #9ca3af;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.sidebar-pin:hover {
+    color: #ececf1;
+}
+
+.sidebar-pin.active {
+    color: #1e90ff;
+}
+
+/* 사이드바 핀 툴팁 */
+.pin-tooltip {
+    position: absolute;
+    background-color: #2a2b32;
+    color: #ececf1;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 8px;
+}
+
+.sidebar-pin:hover .pin-tooltip {
+    opacity: 1;
+}
+
+/* 새 채팅 버튼 스타일 수정 */
+#newChat {
+    width: 100%;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+/* 로그인/회원가입 버튼 컨테이너 스타일 */
+.auth-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 0 5px;
+    gap: 10px;
+}
+
+.auth-buttons a {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+/* 로그인 버튼과 새 채팅 버튼 사이 간격 조정 */
+.auth-buttons + #newChat {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* 로그인 상태일 때 새 채팅 버튼 위치 조정 */
+.sidebar-header + #newChat {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+/* 카테고리 탭 */
+.category-tabs {
+    display: flex;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #444654;
+}
+
+.tab-button {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 10px;
+    color: #9ca3af;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.tab-button.active {
+    color: #ececf1;
+    border-bottom: 2px solid #1e90ff;
+}
+
+/* 작업 컨테이너 */
+.task-container {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-list {
+    list-style: none;
+    flex: 1;
+}
+
+.dropdown-link.dropdown-special {
+    font-weight: 500;
+    color:#ececf1;
+}
+
+.view-all-button {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: #9ca3af;
+    padding: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.2s;
+}
+
+.view-all-button:hover {
+    color: #ececf1;
+}
+
+.history-item {
+    padding: 10px 14px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.history-item:hover {
+    background-color: #2a2b32;
+}
+
+.history-item.active {
+    background-color: #343541;
+    font-weight: 500;
+}
+
+.favorite-icon {
+    margin-right: 8px;
+    color: #ffd700;
+    font-size: 0.8rem;
+}
+
+.sidebar-footer {
+    padding: 10px;
+    border-top: 1px solid #444654;
+    display: flex;
+    gap: 8px;
+    margin-top: auto; /* 푸터를 아래로 밀기 */
+    padding-bottom: 1%; /* 하단 여백 추가 */
+}
+
+.footer-button-container {
+    position: relative;
+    flex: 1;
+}
+
+/* 사이드바 폰트 크기 조정 */
+.footer-button {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #9ca3af;
+    padding: 10px; 
+    font-size: 0.75rem; /* 폰트 크기 축소 */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.footer-button:hover {
+    background-color: #2a2b32;
+    color: #ececf1;
+}
+
+/* 드롭다운 메뉴 위치 수정 */
+.footer-dropdown {
+    position: fixed; /* absolute에서 fixed로 변경 - welcome-page에 가려지지 않도록 */
+    bottom: 70px; /* 바닥에서 일정 거리 유지 */
+    left: auto;
+    min-width: 220px;
+    max-width: 280px;
+    background-color: #2a2b32;
+    border: 1px solid #444654;
+    border-radius: 8px;
+    padding: 8px 0;
+    display: none;
+    z-index: 1100; /* z-index 증가 */
+    margin-bottom: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: hidden; /* 스크롤바 제거 */
+}
+
+/* 드롭다운 위치 조정 - 각 버튼별 */
+.settings-dropdown {
+    left: 10px; /* 왼쪽에서 10px */
+}
+
+.help-dropdown {
+    left: 95px; /* 가운데 버튼 */
+}
+
+.lang-dropdown {
+    left: 180px; /* 오른쪽 버튼 */
+}
+
+/* 푸터 드롭다운 상태 추가 */
+.footer-dropdown.show {
+    display: block;
+}
+
+/* 사이드바 드롭다운 링크 스타일 개선 */
+.dropdown-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    color: #ececf1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.dropdown-link:hover {
+    background-color: #3a3b42;
+}
+
+/* 언어 선택 체크마크 및 링크 아이콘 */
+.dropdown-link .link-icon,
+.dropdown-link .check-icon {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin-left: 8px;
+}
+
+.dropdown-link.active .check-icon {
+    color: #1e90ff;
+    display: inline-block;
+}
+
+.dropdown-link .check-icon {
+    display: none;
+}
+
+/* 메인 콘텐츠 영역 */
+#main {
+    flex: 1;
+    margin-left: 260px;
+    transition: margin-left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: calc(100% - 260px);
+}
+
+#main.sidebar-collapsed {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* 상단바 크기 조정 */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: #343541;
+    height: 52px; /* 헤더 높이 수정 */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #444654;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* 버튼 간격 추가 */
+}
+
+/* 제목바 삭제 및 헤더 내 제목 배치 */
+.title-bar {
+    display: none; /* 2번째 상단바 제거 */
+}
+
+/* 헤더 중앙에 제목 배치 */
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.05rem;
+    color: #ececf1;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.header-title:hover {
+    background-color: #40414f;
+}
+
+/* 서브페이지 제목 드롭다운 메뉴 */
+.title-dropdown {
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    background-color: #2a2b32;
+    border: 1px solid #444654;
+    border-radius: 8px;
+    padding: 8px 0;
+    margin-top: 5px;
+    display: none;
+    z-index: 1001;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.title-dropdown.show {
+    display: block !important; /* !important로 표시 강제 */
+}
+
+.dropdown-item.rename,
+.dropdown-item.delete {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #ececf1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.dropdown-item.rename:hover,
+.dropdown-item.delete:hover {
+    background-color: #40414f;
+}
+
+.dropdown-item.rename i,
+.dropdown-item.delete i {
+    margin-right: 8px;
+    font-size: 0.9rem;
+    width: 16px;
+    text-align: center;
+}
+
+.dropdown-item.delete {
+    color: #ff4d4f; /* 위험 작업을 위한 붉은색 */
+}
+
+/* 제목 스타일 */
+.task-title {
+    font-size: 1.05rem;
+    color: #ececf1;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    display: inline-block;
+}
+
+.task-title:hover {
+    background-color: #40414f;
+}
+
+/* 드롭다운 표시 상태 클래스 추가 */
+.title-dropdown.show {
+    display: block !important;
+}
+
+/* 사용자 클릭 시 드롭다운 표시 유지 */
+.user-dropdown.show {
+    display: block !important;
+}
+
+.dropdown-menu {
+    background-color: #2a2b32;
+    border: 1px solid #565869;
+    border-radius: 5px;
+    padding: 5px 0;
+    margin-top: 5px;
+    min-width: 150px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 유틸리티 버튼 스타일 - 크기 키우기 */
+.utility-button {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-size: 1.2rem; /* 폰트 크기 증가 */
+    cursor: pointer;
+    padding: 8px; /* 패딩 증가 */
+    border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+    position: relative;
+    margin: 0 4px; /* 버튼 간 여백 추가 */
+}
+
+.utility-button:hover {
+    color: #ececf1;
+    background-color: #40414f;
+}
+
+/* 툴팁 스타일 - 폰트 키우기 */
+.tooltip-container {
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    top: -35px; /* 위쪽에 표시 */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2a2b32;
+    color: #ececf1;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-container:hover .tooltip {
+    opacity: 1;
+}
+
+/* 사용자 버튼 크기 및 여백 개선 - B 로고와 같은 위치에 */
+.user-container {
+    position: relative;
+}
+
+.user-button {
+    background-color: #8c51ff;
+    color: white;
+    width: 36px; /* B 로고와 크기 통일 */
+    height: 36px; /* B 로고와 크기 통일 */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 0.85rem; /* 폰트 조절 */
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-left: 8px; /* 여백 추가 */
+    position: relative;
+    top: 0px; /* B 로고와 동일한 높이 */
+}
+
+.user-button:hover {
+    background-color: #7c45e6;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 280px; /* 너비 증가 */
+    background-color: #2a2b32;
+    border: 1px solid #444654;
+    border-radius: 8px;
+    padding: 8px 0;
+    margin-top: 8px;
+    display: none;
+    z-index: 1001;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-header {
+    padding: 12px 15px; /* 패딩 증가 */
+    color: #ececf1;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+}
+
+/* 사용자 드롭다운 레이아웃 개선 */
+.user-role {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin-top: 4px;
+}
+
+.user-role-tag {
+    background-color: rgba(156, 163, 175, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    margin-left: 5px;
+}
+
+/* 추가 구분선 */
+.dropdown-extra-separator {
+    height: 1px;
+    background-color: #444654;
+    margin: 5px 0;
+}
+
+/* 사용자 버튼 툴팁 위치 수정 */
+.quick-tooltip {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2a2b32;
+    color: #ececf1;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    z-index: 1010;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
+
+/* 빠른 액션 버튼 추가 */
+.quick-actions {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.quick-action-btn {
+    background-color: #40414f;
+    color: #9ca3af;
+    border: none;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.quick-action-btn:hover {
+    background-color: #565869;
+    color: #ececf1;
+}
+
+.dropdown-separator {
+    height: 1px;
+    background-color: #444654;
+    margin: 5px 0;
+}
+
+.dropdown-section {
+    padding: 5px 0;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* 드롭다운 메뉴에 특별한 스타일 적용 - 스크롤바 제거 */
+.dropdown-section::-webkit-scrollbar {
+    display: none;
+}
+
+.dropdown-subheader {
+    padding: 8px 15px;
+    color: #9ca3af;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 15px; /* 패딩 증가 */
+    color: #ececf1;
+    text-decoration: none;
+    font-size: 0.95rem; /* 폰트 키우기 */
+    transition: background-color 0.2s;
+}
+
+/* 그룹화 수정 - 'Windows 앱 다운로드'를 위의 그룹으로 이동 */
+.dropdown-item.windows-app {
+    margin-top: 5px; /* 여백 추가 */
+}
+
+.dropdown-item i {
+    margin-right: 10px;
+    width: 18px;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background-color: #40414f;
+}
+
+.dropdown-item.active-project {
+    background-color: rgba(30, 144, 255, 0.1);
+    color: #1e90ff;
+}
+
+/* 사용자 프로젝트 선택 드롭다운 스타일 */
+.projects-section {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.project-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.project-item:hover {
+    background-color: #3a3b42;
+}
+
+.project-item.active-project {
+    background-color: rgba(30, 144, 255, 0.1);
+}
+
+.project-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #565869;
+    border-radius: 4px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.project-owner {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+/* 로그아웃 버튼 스타일 수정 */
+.logout-form {
+    margin: 0;
+    padding: 0;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    color: #ececf1;
+    text-align: left;
+    font-size: 0.95rem;
+    padding: 12px 15px;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.logout-button i {
+    margin-right: 10px;
+    width: 18px;
+    text-align: center;
+}
+
+.logout-button:hover {
+    background-color: #40414f;
+}
+
+/* 웰컴 페이지 스타일 */
+.welcome-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.welcome-container {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1e90ff;
+    margin-bottom: 30px;
+}
+
+.welcome-message {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: #ececf1;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+/* 메인 입력창 UI 개선 (Claude 3.7 스타일) */
+.main-input-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #565869;
+    border-radius: 12px;
+    background-color: #40414f;
+    padding: 6px 10px;
+    width: 100%;
+    position: relative;
+}
+
+/* 모델 선택 및 응답 스타일 선택 영역 개선 */
+.model-options {
+    display: flex;
+    padding: 4px 8px;
+    border-bottom: 0px solid #565869;
+}
+
+/* 모델+사고모드 통합 및 우측 정렬 스타일 선택 */
+.model-selector {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.style-selector {
+    display: flex;
+    align-items: center;
+}
+
+/* 모델 버튼 */
+.model-button, .style-button {
+    background: none;
+    border: none;
+    color: #ececf1;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.model-button:hover, .style-button:hover {
+    background-color: #4b4c5d;
+}
+
+.model-name {
+    font-weight: 500;
+}
+
+.model-check, .style-check {
+    color: #1e90ff;
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+/* 사고모드 표시 - 모델 아래에 배치 */
+.thinking-mode {
+    font-size: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #ececf1;
+    margin-top: 4px;
+    margin-left: 8px;
+}
+
+/* 모델 드롭다운 */
+.model-dropdown, .style-dropdown {
+    position: absolute;
+    top: 100%;
+    width: 180px;
+    background-color: #2a2b32;
+    border: 1px solid #444654;
+    border-radius: 8px;
+    padding: 8px 0;
+    margin-top: 5px;
+    display: none;
+    z-index: 1010;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.model-dropdown {
+    left: 10px;
+}
+
+.style-dropdown {
+    right: 10px;
+}
+
+.model-dropdown.show, .style-dropdown.show {
+    display: block;
+}
+
+/* 모델 옵션 */
+.model-option, .style-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.model-option:hover, .style-option:hover {
+    background-color: #40414f;
+}
+
+.model-option.selected, .style-option.selected {
+    background-color: rgba(30, 144, 255, 0.1);
+}
+
+.model-option-name, .style-option-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.style-option-desc {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin-top: 2px;
+}
+
+/* 스타일 생성 링크 */
+.style-create {
+    padding: 10px 15px;
+    color: #1e90ff;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-top: 1px solid #444654;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s;
+}
+
+.style-create:hover {
+    background-color: #40414f;
+}
+
+/* 메인 입력창 스타일 수정 - ChatGPT 스타일 동적 확장 */
+.main-input {
+    padding: 12px 10px;
+    background: none;
+    border: none;
+    color: #ececf1;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-y: auto; /* 스크롤 자동 표시 */
+    resize: none; /* 사용자 리사이징 방지 */
+    line-height: 1.5; /* 줄 간격 추가 */
+    min-height: 28px; /* 최소 높이 설정 */
+    max-height: 150px; /* 최대 높이 설정 */
+}
+
+/* 업로드 툴바 개선 (아이콘만 남기고 툴팁 적용) */
+.input-tools {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-top: 0px solid #565869;
+    gap: 12px;
+}
+
+.tool-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af;
+    font-size: 1rem;
+    padding: 5px;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.tool-button:hover {
+    color: #ececf1;
+}
+
+.tool-separator {
+    width: 1px;
+    height: 20px;
+    background-color: #565869;
+}
+
+/* 전송 버튼 위치 수정 - 우측 하단에 고정 */
+.main-enter-btn {
+    background-color: #1e90ff; /* 항상 파란색 배경으로 변경 */
+    border: none;
+    color: white; /* 아이콘 색상을 흰색으로 고정 */
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 8px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s, transform 0.2s;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 10;
+}
+
+.main-enter-btn:hover {
+    background-color: #1a7ddd; /* 호버 시 색상 약간 어둡게 */
+    transform: scale(1.05); /* 호버 시 약간 확대 */
+}
+
+.main-enter-btn.recording {
+    background-color: #ff4b4b !important; /* 녹음 중일 때 빨간색으로 변경 */
+}
+
+.example-tasks {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.example-tasks h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #9ca3af;
+    margin-bottom: 20px;
+}
+
+.task-examples {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.example-card {
+    background-color: #40414f;
+    border: 1px solid #565869;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s, transform 0.2s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.example-card:hover {
+    background-color: #4b4c5d;
+    transform: translateY(-3px);
+}
+
+.example-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.example-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* 채팅 페이지 스타일 */
+.chat-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 대화창 스타일 */
+#chatWindow {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.message {
+    max-width: 90%;
+    padding: 15px;
+    border-radius: 10px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.system-message {
+    align-self: center;
+    background-color: #444654;
+    color: #ececf1;
+    font-size: 0.9rem;
+    max-width: 70%;
+    text-align: center;
+    border: 1px solid #565869;
+}
+
+.progress-message {
+    font-size: 0.85rem;
+    max-width: 60%;
+    padding: 8px 12px;
+}
+
+.in-progress {
+    background-color: #2d2d39;
+    border: 1px solid #3c3c4a;
+}
+
+.progress-indicator {
+    margin-top: 8px;
+    height: 4px;
+    width: 100%;
+    background-color: #565869;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 70%;
+    background-color: #1e90ff;
+    border-radius: 2px;
+    animation: progress 2s infinite linear;
+}
+
+@keyframes progress {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #343541;
+    color: #ececf1;
+    border: 1px solid #565869;
+}
+
+.assistant-message {
+    align-self: flex-start;
+    background-color: #444654;
+    color: #ececf1;
+    border: 1px solid #565869;
+    max-width: 85%;
+}
+
+.message.persisted {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+/* Reconfirmation Prompt 스타일 개선 */
+.reconfirmation-prompt {
+    width: 100%;
+    background-color: #2a2b32;
+    border: 1px solid #565869;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+.reconfirmation-prompt.completed {
+    opacity: 0.8;
+    background-color: rgba(42, 43, 50, 0.7);
+    /* 완료 상태 유지를 위한 추가 스타일 */
+    pointer-events: none; /* 클릭 불가능하게 설정 */
+}
+
+.reconfirmation-prompt h3 {
+    margin-bottom: 12px;
+    color: #ececf1;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.reconfirmation-prompt p {
+    color: #c5c5d2;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.task-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.task-step {
+    border: 1px solid #565869;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #343541;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    padding: 14px 15px;
+}
+
+.step-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    background-color: #1e90ff;
+    color: white;
+    border-radius: 50%;
+    margin-right: 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.step-title {
+    flex: 1;
+    font-weight: 500;
+    color: #ececf1;
+    font-size: 1rem;
+}
+
+.step-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #9ca3af;
+    transition: color 0.2s;
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+
+.action-button:hover {
+    color: #ececf1;
+    background-color: #40414f;
+}
+
+.confirm-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* 입력 컨테이너 스타일 - Claude 3.7 스타일과 유사하게 개선 */
+#inputContainer {
+    padding: 10px 20px 20px 20px;
+    background-color: #343541;
+    border-top: 1px solid #444654;
+}
+
+/* 서브페이지용 입력 컨테이너 */
+.input-flex-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #565869;
+    border-radius: 12px;
+    background-color: #40414f;
+    padding: 6px 10px;
+    position: relative;
+}
+
+/* 서브페이지 모델 선택 영역 */
+.chat-model-options {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-bottom: 1px solid #565869;
+}
+
+.input-textarea-container {
+    flex: 1;
+    position: relative;
+    min-height: 24px;
+    max-height: 150px; /* 최대 높이 제한 */
+}
+
+/* 서브페이지 입력창 - ChatGPT 스타일 동적 확장 적용 */
+#userInput {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #ececf1;
+    outline: none;
+    font-size: 0.95rem;
+    resize: none;
+    padding: 12px 10px;
+    font-family: inherit;
+    line-height: 1.5;
+    min-height: 24px;
+    max-height: 150px;
+    overflow-y: auto;
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* 서브페이지 입력창 도구 영역 - Claude 3.7 스타일 */
+.chat-input-tools {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-top: 1px solid #565869;
+    gap: 12px;
+}
+
+/* 서브페이지 전송 버튼 - 우측 하단에 고정 */
+.send-button {
+    background-color: #1e90ff !important;
+    border: none;
+    color: white !important;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 8px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s, transform 0.2s;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 10;
+}
+
+.send-button:hover {
+    background-color: #1a7ddd !important;
+    transform: scale(1.05);
+}
+
+.send-button.recording {
+    background-color: #ff4b4b !important;
+}
+
+.send-icon, .mic-icon {
+    color: white !important;
+}
+
+/* 버튼 스타일 */
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #9ca3af;
+    transition: color 0.2s;
+    padding: 5px;
+}
+
+.icon-button:hover {
+    color: #ececf1;
+}
+
+.primary-button {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.primary-button:hover {
+    background-color: #1a7ddd;
+}
+
+.secondary-button {
+    background-color: #40414f;
+    color: #ececf1;
+    border: 1px solid #565869;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.secondary-button:hover {
+    background-color: #4b4c5a;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #2a2b32;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #444654;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #565869;
+    border-radius: 8px;
+    background-color: #40414f;
+    color: #ececf1;
+    font-size: 0.95rem;
+}
+
+.all-tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-item {
+    padding: 12px;
+    background-color: #40414f;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.task-item:hover {
+    background-color: #4b4c5d;
+}
+
+.task-item-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.task-item-date {
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+/* 대화 기록 사이드 패널 */
+.log-diary-panel {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #2a2b32;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+}
+
+.log-diary-panel.open {
+    right: 0;
+}
+
+.log-diary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #444654;
+}
+
+.close-panel {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.log-diary-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.log-entry {
+    padding: 10px;
+    border-bottom: 1px solid #444654;
+}
+
+.log-timestamp {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin-bottom: 5px;
+}
+
+.log-message {
+    font-size: 0.9rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        transform: translateX(-100%);
+    }
+    
+    #sidebar.collapsed {
+        transform: translateX(-100%);
+    }
+    
+    #sidebar.open {
+        transform: translateX(0);
+    }
+    
+    #main {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .title-container {
+        padding: 0;
+    }
+    
+    #taskTitle {
+        font-size: 1rem;
+    }
+    
+    .message {
+        max-width: 95%;
+    }
+    
+    .welcome-message {
+        font-size: 1.2rem;
+    }
+    
+    .task-examples {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+    }
+    
+    .example-card {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .log-diary-panel {
+        width: 100%;
+        right: -100%;
+    }
+}

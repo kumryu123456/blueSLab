@@ -1,0 +1,1609 @@
+INFO 2025-03-18 06:52:43,192 autoreload 135752 110856 Watching for file changes with StatReloader
+INFO 2025-03-18 06:52:52,693 autoreload 135752 110856 C:\Users\kumry\blueai\blueai\settings.py changed, reloading.
+INFO 2025-03-18 07:02:02,537 autoreload 149696 113424 Watching for file changes with StatReloader
+INFO 2025-03-18 07:02:31,654 autoreload 128672 90620 Watching for file changes with StatReloader
+INFO 2025-03-18 07:08:20,240 autoreload 128672 90620 C:\Users\kumry\blueai\core\views.py changed, reloading.
+INFO 2025-03-18 07:08:20,737 autoreload 125848 149376 Watching for file changes with StatReloader
+INFO 2025-03-18 07:08:37,457 autoreload 125848 149376 C:\Users\kumry\blueai\core\middleware.py changed, reloading.
+INFO 2025-03-18 07:08:37,984 autoreload 157576 66696 Watching for file changes with StatReloader
+INFO 2025-03-18 07:09:24,511 autoreload 157576 66696 C:\Users\kumry\blueai\core\middleware.py changed, reloading.
+INFO 2025-03-18 07:09:24,964 autoreload 154076 146808 Watching for file changes with StatReloader
+INFO 2025-03-18 07:09:28,346 autoreload 154076 146808 C:\Users\kumry\blueai\core\middleware.py changed, reloading.
+INFO 2025-03-18 07:09:28,797 autoreload 150232 132692 Watching for file changes with StatReloader
+INFO 2025-03-18 07:09:43,418 autoreload 150232 132692 C:\Users\kumry\blueai\core\middleware.py changed, reloading.
+INFO 2025-03-18 07:09:43,916 autoreload 67372 112752 Watching for file changes with StatReloader
+INFO 2025-03-18 07:10:18,119 autoreload 67372 112752 C:\Users\kumry\blueai\core\urls.py changed, reloading.
+INFO 2025-03-18 07:10:18,569 autoreload 97308 148508 Watching for file changes with StatReloader
+INFO 2025-03-18 07:18:13,912 autoreload 154652 148660 Watching for file changes with StatReloader
+INFO 2025-03-18 07:18:16,149 basehttp 154652 140048 "GET / HTTP/1.1" 200 26311
+INFO 2025-03-18 07:18:16,199 basehttp 154652 140048 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-03-18 07:18:16,328 basehttp 154652 147448 "GET /static/js/script.js HTTP/1.1" 200 83938
+INFO 2025-03-18 07:18:20,618 basehttp 154652 147448 "POST /accounts/logout/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 07:18:20,621 views 154652 147448 Login view accessed
+DEBUG 2025-03-18 07:18:20,621 views 154652 147448 GET request received
+INFO 2025-03-18 07:18:20,627 basehttp 154652 147448 "GET /accounts/login/?next=/accounts/logout/ HTTP/1.1" 200 6701
+ERROR 2025-03-18 07:18:26,108 log 154652 147448 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\kumry\blueai\accounts\views.py", line 60, in register_view
+    return render(request, 'accounts/register.html', {'form': form})
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/register.html
+ERROR 2025-03-18 07:18:26,111 basehttp 154652 147448 "GET /accounts/register/ HTTP/1.1" 500 81497
+ERROR 2025-03-18 07:18:27,788 log 154652 147448 Internal Server Error: /accounts/password/reset/
+Traceback (most recent call last):
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\kumry\blueai\accounts\views.py", line 223, in password_reset_request_view
+    return render(request, 'accounts/password_reset_request.html', {'form': form})
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/password_reset_request.html
+ERROR 2025-03-18 07:18:27,789 basehttp 154652 147448 "GET /accounts/password/reset/ HTTP/1.1" 500 81866
+DEBUG 2025-03-18 07:18:32,869 views 154652 147448 Login view accessed
+DEBUG 2025-03-18 07:18:32,869 views 154652 147448 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['bCIpJl5eKvbnABWPccUlUfrYgWm4iSYHCX54uzLZ769UEIpjQiXlUXcp1kEfbJVM'], 'username': ['kumryu'], 'password': ['8717400s']}>
+ERROR 2025-03-18 07:18:32,926 log 154652 147448 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: accounts_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\kumry\blueai\accounts\views.py", line 75, in login_view
+    if form.is_valid():
+       ~~~~~~~~~~~~~^^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\forms\forms.py", line 197, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\forms\forms.py", line 192, in errors
+    self.full_clean()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\forms\forms.py", line 326, in full_clean
+    self._clean_form()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\forms\forms.py", line 342, in _clean_form
+    cleaned_data = self.clean()
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\forms.py", line 363, in clean
+    self.user_cache = authenticate(
+                      ~~~~~~~~~~~~^
+        self.request, username=username, password=password
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: accounts_user
+ERROR 2025-03-18 07:18:32,934 basehttp 154652 147448 "POST /accounts/login/ HTTP/1.1" 500 184485
+DEBUG 2025-03-18 07:18:36,560 views 154652 147448 Login view accessed
+DEBUG 2025-03-18 07:18:36,561 views 154652 147448 GET request received
+INFO 2025-03-18 07:18:36,562 basehttp 154652 147448 "GET /accounts/login/ HTTP/1.1" 200 6701
+ERROR 2025-03-18 07:18:37,897 log 154652 147448 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\kumry\blueai\accounts\views.py", line 60, in register_view
+    return render(request, 'accounts/register.html', {'form': form})
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/register.html
+ERROR 2025-03-18 07:18:37,898 basehttp 154652 147448 "GET /accounts/register/ HTTP/1.1" 500 81459
+INFO 2025-03-18 07:18:51,637 basehttp 154652 147448 "POST /accounts/logout/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 07:18:51,640 views 154652 147448 Login view accessed
+DEBUG 2025-03-18 07:18:51,641 views 154652 147448 GET request received
+INFO 2025-03-18 07:18:51,642 basehttp 154652 147448 "GET /accounts/login/?next=/accounts/logout/ HTTP/1.1" 200 6701
+ERROR 2025-03-18 07:18:57,664 log 154652 147448 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\kumry\blueai\accounts\views.py", line 60, in register_view
+    return render(request, 'accounts/register.html', {'form': form})
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\kumry\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/register.html
+ERROR 2025-03-18 07:18:57,665 basehttp 154652 147448 "GET /accounts/register/ HTTP/1.1" 500 81497
+INFO 2025-03-18 09:38:30,800 autoreload 21872 10424 Watching for file changes with StatReloader
+INFO 2025-03-18 09:38:33,622 basehttp 21872 21164 "GET / HTTP/1.1" 200 26311
+INFO 2025-03-18 09:38:33,906 basehttp 21872 21164 "GET /static/css/style.css HTTP/1.1" 200 30928
+INFO 2025-03-18 09:38:33,943 basehttp 21872 7712 "GET /static/js/script.js HTTP/1.1" 200 81895
+WARNING 2025-03-18 09:38:34,011 log 21872 7712 Not Found: /favicon.ico
+WARNING 2025-03-18 09:38:34,012 basehttp 21872 7712 "GET /favicon.ico HTTP/1.1" 404 5709
+INFO 2025-03-18 09:38:38,260 basehttp 21872 7712 "POST /accounts/logout/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 09:38:38,267 views 21872 7712 Login view accessed
+DEBUG 2025-03-18 09:38:38,267 views 21872 7712 GET request received
+INFO 2025-03-18 09:38:38,272 basehttp 21872 7712 "GET /accounts/login/?next=/accounts/logout/ HTTP/1.1" 200 6701
+DEBUG 2025-03-18 09:38:41,373 views 21872 7712 Login view accessed
+DEBUG 2025-03-18 09:38:41,373 views 21872 7712 GET request received
+INFO 2025-03-18 09:38:41,376 basehttp 21872 7712 "GET /accounts/login/ HTTP/1.1" 200 6701
+DEBUG 2025-03-18 09:38:46,980 views 21872 7712 Login view accessed
+DEBUG 2025-03-18 09:38:46,980 views 21872 7712 GET request received
+INFO 2025-03-18 09:38:46,982 basehttp 21872 7712 "GET /accounts/login/ HTTP/1.1" 200 6701
+DEBUG 2025-03-18 09:38:50,928 views 21872 7712 Login view accessed
+DEBUG 2025-03-18 09:38:50,928 views 21872 7712 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['oWmCtBI0idURAwRzodc0xlubGys98Q7K106avr77gOgV0XUhPaSEoGISu9fapsc6'], 'username': ['kumryu123456@gmail.com'], 'password': ['8717400s']}>
+ERROR 2025-03-18 09:38:50,979 log 21872 7712 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: accounts_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 75, in login_view
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 197, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 192, in errors
+    self.full_clean()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 325, in full_clean
+    self._clean_fields()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 335, in _clean_fields
+    value = getattr(self, "clean_%s" % name)()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\forms.py", line 72, in clean_username
+    user = User.objects.get(email=username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: accounts_user
+ERROR 2025-03-18 09:38:50,979 basehttp 21872 7712 "POST /accounts/login/ HTTP/1.1" 500 168254
+INFO 2025-03-18 09:43:39,119 basehttp 21872 7712 "GET / HTTP/1.1" 200 26311
+DEBUG 2025-03-18 09:43:46,868 views 21872 7712 Login view accessed
+DEBUG 2025-03-18 09:43:46,868 views 21872 7712 GET request received
+INFO 2025-03-18 09:43:46,868 basehttp 21872 7712 "GET /accounts/login/ HTTP/1.1" 200 6701
+INFO 2025-03-18 09:44:45,878 autoreload 21872 10424 C:\Users\USER\blueai\accounts\context_processors.py changed, reloading.
+INFO 2025-03-18 09:44:46,495 autoreload 10564 13248 Watching for file changes with StatReloader
+INFO 2025-03-18 09:45:03,095 autoreload 10564 13248 C:\Users\USER\blueai\accounts\apps.py changed, reloading.
+INFO 2025-03-18 09:45:03,713 autoreload 21616 10252 Watching for file changes with StatReloader
+INFO 2025-03-18 09:45:06,434 autoreload 21616 10252 C:\Users\USER\blueai\accounts\apps.py changed, reloading.
+INFO 2025-03-18 09:45:07,045 autoreload 19540 4484 Watching for file changes with StatReloader
+INFO 2025-03-18 09:45:12,878 autoreload 19540 4484 C:\Users\USER\blueai\accounts\apps.py changed, reloading.
+INFO 2025-03-18 09:45:13,561 autoreload 14020 20196 Watching for file changes with StatReloader
+INFO 2025-03-18 09:49:14,449 basehttp 14020 20036 "GET / HTTP/1.1" 200 26311
+INFO 2025-03-18 09:49:21,237 basehttp 14020 20036 "POST /accounts/logout/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 09:49:21,241 views 14020 20036 Login view accessed
+DEBUG 2025-03-18 09:49:21,241 views 14020 20036 GET request received
+INFO 2025-03-18 09:49:21,253 basehttp 14020 20036 "GET /accounts/login/?next=/accounts/logout/ HTTP/1.1" 200 6701
+ERROR 2025-03-18 09:49:40,936 log 14020 20036 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 60, in register_view
+    return render(request, 'accounts/register.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/register.html
+ERROR 2025-03-18 09:49:40,940 basehttp 14020 20036 "GET /accounts/register/ HTTP/1.1" 500 82720
+DEBUG 2025-03-18 09:49:58,800 views 14020 20036 Login view accessed
+DEBUG 2025-03-18 09:49:58,800 views 14020 20036 GET request received
+INFO 2025-03-18 09:49:58,802 basehttp 14020 20036 "GET /accounts/login/ HTTP/1.1" 200 6701
+DEBUG 2025-03-18 09:50:03,034 views 14020 20036 Login view accessed
+DEBUG 2025-03-18 09:50:03,035 views 14020 20036 GET request received
+INFO 2025-03-18 09:50:03,037 basehttp 14020 20036 "GET /accounts/login/ HTTP/1.1" 200 6701
+DEBUG 2025-03-18 09:50:06,209 views 14020 20036 Login view accessed
+DEBUG 2025-03-18 09:50:06,209 views 14020 20036 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['OeWwriqtIfc7mWP7Tt4k1uEDMlaOcMiiriG4t8PAGQybMnSPkqKYSPSkAWXPtonE'], 'username': ['ㅇ'], 'password': ['d']}>
+ERROR 2025-03-18 09:50:06,260 log 14020 20036 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: accounts_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 75, in login_view
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 197, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 192, in errors
+    self.full_clean()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 326, in full_clean
+    self._clean_form()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 342, in _clean_form
+    cleaned_data = self.clean()
+                   ^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\forms.py", line 363, in clean
+    self.user_cache = authenticate(
+                      ^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: accounts_user
+ERROR 2025-03-18 09:50:06,271 basehttp 14020 20036 "POST /accounts/login/ HTTP/1.1" 500 185638
+ERROR 2025-03-18 09:50:22,840 log 14020 20036 Internal Server Error: /accounts/password/reset/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 223, in password_reset_request_view
+    return render(request, 'accounts/password_reset_request.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/password_reset_request.html
+ERROR 2025-03-18 09:50:22,843 basehttp 14020 20036 "GET /accounts/password/reset/ HTTP/1.1" 500 83104
+ERROR 2025-03-18 09:50:50,814 log 14020 20036 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 60, in register_view
+    return render(request, 'accounts/register.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/register.html
+ERROR 2025-03-18 09:50:50,816 basehttp 14020 20036 "GET /accounts/register/ HTTP/1.1" 500 82735
+DEBUG 2025-03-18 09:50:59,663 views 14020 20036 Login view accessed
+DEBUG 2025-03-18 09:50:59,663 views 14020 20036 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['OeWwriqtIfc7mWP7Tt4k1uEDMlaOcMiiriG4t8PAGQybMnSPkqKYSPSkAWXPtonE'], 'username': ['ㅇ'], 'password': ['d']}>
+ERROR 2025-03-18 09:50:59,705 log 14020 20036 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: accounts_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 75, in login_view
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 197, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 192, in errors
+    self.full_clean()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 326, in full_clean
+    self._clean_form()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 342, in _clean_form
+    cleaned_data = self.clean()
+                   ^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\forms.py", line 363, in clean
+    self.user_cache = authenticate(
+                      ^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: accounts_user
+ERROR 2025-03-18 09:50:59,705 basehttp 14020 20036 "POST /accounts/login/ HTTP/1.1" 500 185638
+INFO 2025-03-18 10:14:06,219 autoreload 23532 9672 Watching for file changes with StatReloader
+INFO 2025-03-18 10:14:09,508 basehttp 23532 2168 "POST /accounts/logout/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 10:14:09,512 views 23532 2168 Login view accessed
+DEBUG 2025-03-18 10:14:09,513 views 23532 2168 GET request received
+INFO 2025-03-18 10:14:09,522 basehttp 23532 2168 "GET /accounts/login/?next=/accounts/logout/ HTTP/1.1" 200 6701
+INFO 2025-03-18 10:14:09,543 basehttp 23532 2168 "GET /static/css/style.css HTTP/1.1" 304 0
+DEBUG 2025-03-18 10:14:16,023 views 23532 2168 Login view accessed
+DEBUG 2025-03-18 10:14:16,023 views 23532 2168 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['kI7pjEAaJr7UoqHRbks32ZF4iy26jYV1XMRXluZhH2tYORKzCh8HTkTL69P7AA0n'], 'username': ['ㅇ'], 'password': ['d']}>
+ERROR 2025-03-18 10:14:16,079 log 23532 2168 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: accounts_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 75, in login_view
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 197, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 192, in errors
+    self.full_clean()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 326, in full_clean
+    self._clean_form()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 342, in _clean_form
+    cleaned_data = self.clean()
+                   ^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\forms.py", line 363, in clean
+    self.user_cache = authenticate(
+                      ^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: accounts_user
+ERROR 2025-03-18 10:14:16,094 basehttp 23532 2168 "POST /accounts/login/ HTTP/1.1" 500 185661
+DEBUG 2025-03-18 10:16:17,390 views 23532 2168 Login view accessed
+DEBUG 2025-03-18 10:16:17,390 views 23532 2168 GET request received
+INFO 2025-03-18 10:16:17,390 basehttp 23532 2168 "GET /accounts/login/?next=/accounts/logout/ HTTP/1.1" 200 6701
+INFO 2025-03-18 10:25:25,380 autoreload 21884 23992 Watching for file changes with StatReloader
+DEBUG 2025-03-18 10:25:29,593 views 21884 25244 Login view accessed
+DEBUG 2025-03-18 10:25:29,594 views 21884 25244 GET request received
+INFO 2025-03-18 10:25:29,624 basehttp 21884 25244 "GET /accounts/login/?next=/accounts/logout/ HTTP/1.1" 200 6701
+INFO 2025-03-18 10:25:36,886 basehttp 21884 25244 "GET / HTTP/1.1" 200 24177
+INFO 2025-03-18 10:25:37,476 basehttp 21884 25244 "GET /static/js/script.js HTTP/1.1" 200 85204
+DEBUG 2025-03-18 10:25:39,589 views 21884 25244 Login view accessed
+DEBUG 2025-03-18 10:25:39,589 views 21884 25244 GET request received
+INFO 2025-03-18 10:25:39,592 basehttp 21884 25244 "GET /accounts/login/ HTTP/1.1" 200 6701
+DEBUG 2025-03-18 10:25:45,171 views 21884 25244 Login view accessed
+DEBUG 2025-03-18 10:25:45,171 views 21884 25244 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['1cayiGUsdLWjcprAShcCtz1MM0MDCknfEgU6kwjzbminCQuijeSgkUftABzETWsB'], 'username': ['kumryu'], 'password': ['8717400s']}>
+ERROR 2025-03-18 10:25:45,322 log 21884 25244 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+accounts.models.User.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 225, in _load_library
+    module = importlib.import_module(mod_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'argon2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 75, in login_view
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 197, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 192, in errors
+    self.full_clean()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 326, in full_clean
+    self._clean_form()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 342, in _clean_form
+    cleaned_data = self.clean()
+                   ^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\forms.py", line 363, in clean
+    self.user_cache = authenticate(
+                      ^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\backends.py", line 46, in authenticate
+    UserModel().set_password(password)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\base_user.py", line 94, in set_password
+    self.password = make_password(raw_password)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 113, in make_password
+    return hasher.encode(password, salt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 396, in encode
+    argon2 = self._load_library()
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 227, in _load_library
+    raise ValueError(
+ValueError: Couldn't load 'Argon2PasswordHasher' algorithm library: No module named 'argon2'
+ERROR 2025-03-18 10:25:45,339 basehttp 21884 25244 "POST /accounts/login/ HTTP/1.1" 500 149811
+INFO 2025-03-18 10:25:48,106 basehttp 21884 25244 "GET /accounts/register/ HTTP/1.1" 200 8040
+INFO 2025-03-18 10:26:09,784 basehttp 21884 25244 "POST /accounts/register/ HTTP/1.1" 200 8278
+ERROR 2025-03-18 10:26:17,715 log 21884 25244 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 225, in _load_library
+    module = importlib.import_module(mod_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'argon2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 38, in register_view
+    user = form.save(commit=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\forms.py", line 263, in save
+    user = self.set_password_and_save(user, commit=commit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\forms.py", line 150, in set_password_and_save
+    user.set_password(self.cleaned_data[password_field_name])
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\base_user.py", line 94, in set_password
+    self.password = make_password(raw_password)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 113, in make_password
+    return hasher.encode(password, salt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 396, in encode
+    argon2 = self._load_library()
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 227, in _load_library
+    raise ValueError(
+ValueError: Couldn't load 'Argon2PasswordHasher' algorithm library: No module named 'argon2'
+ERROR 2025-03-18 10:26:17,718 basehttp 21884 25244 "POST /accounts/register/ HTTP/1.1" 500 107882
+INFO 2025-03-18 10:26:27,387 basehttp 21884 25244 "GET /accounts/register/ HTTP/1.1" 200 8040
+DEBUG 2025-03-18 10:26:38,122 views 21884 25244 Login view accessed
+DEBUG 2025-03-18 10:26:38,122 views 21884 25244 GET request received
+INFO 2025-03-18 10:26:38,124 basehttp 21884 25244 "GET /accounts/login/ HTTP/1.1" 200 6701
+INFO 2025-03-18 10:26:41,271 basehttp 21884 25244 "GET /accounts/password/reset/ HTTP/1.1" 200 5325
+INFO 2025-03-18 10:26:43,998 basehttp 21884 25244 "POST /accounts/password/reset/ HTTP/1.1" 200 5535
+DEBUG 2025-03-18 10:26:47,052 views 21884 25244 Login view accessed
+DEBUG 2025-03-18 10:26:47,053 views 21884 25244 GET request received
+INFO 2025-03-18 10:26:47,056 basehttp 21884 25244 "GET /accounts/login/ HTTP/1.1" 200 6701
+DEBUG 2025-03-18 10:27:27,683 views 21884 25244 Login view accessed
+DEBUG 2025-03-18 10:27:27,683 views 21884 25244 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['HQqAWvMUbuPC6V3ubW4cTENrKnLU7ZUskUa8Ylb195bGwm6cCTKQKZ18yYyVoBZO'], 'username': ['ㅇ'], 'password': ['d']}>
+ERROR 2025-03-18 10:27:27,749 log 21884 25244 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+accounts.models.User.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 225, in _load_library
+    module = importlib.import_module(mod_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'argon2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 75, in login_view
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 197, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 192, in errors
+    self.full_clean()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 326, in full_clean
+    self._clean_form()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\forms\forms.py", line 342, in _clean_form
+    cleaned_data = self.clean()
+                   ^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\forms.py", line 363, in clean
+    self.user_cache = authenticate(
+                      ^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\backends.py", line 46, in authenticate
+    UserModel().set_password(password)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\base_user.py", line 94, in set_password
+    self.password = make_password(raw_password)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 113, in make_password
+    return hasher.encode(password, salt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 396, in encode
+    argon2 = self._load_library()
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 227, in _load_library
+    raise ValueError(
+ValueError: Couldn't load 'Argon2PasswordHasher' algorithm library: No module named 'argon2'
+ERROR 2025-03-18 10:27:27,766 basehttp 21884 25244 "POST /accounts/login/ HTTP/1.1" 500 149731
+INFO 2025-03-18 10:28:46,917 basehttp 21884 25244 "GET /accounts/password/reset/ HTTP/1.1" 200 5325
+DEBUG 2025-03-18 10:28:49,476 views 21884 25244 Login view accessed
+DEBUG 2025-03-18 10:28:49,477 views 21884 25244 GET request received
+INFO 2025-03-18 10:28:49,479 basehttp 21884 25244 "GET /accounts/login/ HTTP/1.1" 200 6701
+INFO 2025-03-18 10:28:58,229 basehttp 21884 25244 "POST /accounts/password/reset/ HTTP/1.1" 200 5535
+INFO 2025-03-18 10:29:01,523 basehttp 21884 25244 "GET /accounts/password/reset/ HTTP/1.1" 200 5325
+INFO 2025-03-18 10:29:34,190 basehttp 21884 25244 "GET /accounts/register/ HTTP/1.1" 200 8040
+DEBUG 2025-03-18 10:29:38,293 views 21884 25244 Login view accessed
+DEBUG 2025-03-18 10:29:38,294 views 21884 25244 GET request received
+INFO 2025-03-18 10:29:38,297 basehttp 21884 25244 "GET /accounts/login/ HTTP/1.1" 200 6701
+ERROR 2025-03-18 10:30:21,806 log 21884 25244 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 225, in _load_library
+    module = importlib.import_module(mod_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'argon2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 38, in register_view
+    user = form.save(commit=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\forms.py", line 263, in save
+    user = self.set_password_and_save(user, commit=commit)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\forms.py", line 150, in set_password_and_save
+    user.set_password(self.cleaned_data[password_field_name])
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\base_user.py", line 94, in set_password
+    self.password = make_password(raw_password)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 113, in make_password
+    return hasher.encode(password, salt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 396, in encode
+    argon2 = self._load_library()
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\hashers.py", line 227, in _load_library
+    raise ValueError(
+ValueError: Couldn't load 'Argon2PasswordHasher' algorithm library: No module named 'argon2'
+ERROR 2025-03-18 10:30:21,821 basehttp 21884 25244 "POST /accounts/register/ HTTP/1.1" 500 107882
+DEBUG 2025-03-18 10:45:39,195 views 21884 23788 Login view accessed
+DEBUG 2025-03-18 10:45:39,196 views 21884 23788 GET request received
+INFO 2025-03-18 10:45:39,197 basehttp 21884 23788 "GET /accounts/login/ HTTP/1.1" 200 6701
+INFO 2025-03-18 10:45:39,253 basehttp 21884 23788 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-03-18 10:45:49,365 basehttp 21884 23788 "GET /accounts/password/reset/ HTTP/1.1" 200 5325
+INFO 2025-03-18 11:03:30,535 autoreload 23220 22244 Watching for file changes with StatReloader
+INFO 2025-03-18 11:03:33,354 basehttp 23220 27372 "GET / HTTP/1.1" 200 24177
+INFO 2025-03-18 11:03:33,390 basehttp 23220 27372 "GET /static/js/script.js HTTP/1.1" 304 0
+DEBUG 2025-03-18 11:03:34,594 views 23220 27372 Login view accessed
+DEBUG 2025-03-18 11:03:34,594 views 23220 27372 GET request received
+INFO 2025-03-18 11:03:34,601 basehttp 23220 27372 "GET /accounts/login/ HTTP/1.1" 200 6701
+INFO 2025-03-18 11:03:36,014 basehttp 23220 27372 "GET /accounts/register/ HTTP/1.1" 200 8040
+DEBUG 2025-03-18 11:03:43,610 views 23220 27372 Login view accessed
+DEBUG 2025-03-18 11:03:43,610 views 23220 27372 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['XILR0JYWlKRoMOPcgDrlzKcHAU9vFhUAAMvp2zn3jldscfSUHA7Zq5qoovWwWTZW'], 'username': ['kumryu'], 'password': ['8717400s']}>
+DEBUG 2025-03-18 11:03:43,743 views 23220 27372 Form errors: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>올바른 사용자 이름와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다.</li></ul></li></ul>
+INFO 2025-03-18 11:03:43,743 basehttp 23220 27372 "POST /accounts/login/ HTTP/1.1" 200 6911
+INFO 2025-03-18 11:03:45,272 basehttp 23220 27372 "GET /accounts/register/ HTTP/1.1" 200 8040
+ERROR 2025-03-18 11:05:32,900 log 23220 27372 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: core_project
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 46, in register_view
+    project = Project.objects.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 892, in save
+    self.save_base(
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: core_project
+ERROR 2025-03-18 11:05:32,902 basehttp 23220 27372 "POST /accounts/register/ HTTP/1.1" 500 163107
+INFO 2025-03-18 12:26:44,368 basehttp 23220 28256 "POST /accounts/register/ HTTP/1.1" 200 8449
+INFO 2025-03-18 12:26:44,401 basehttp 23220 28256 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-03-18 12:26:55,402 basehttp 23220 28256 "GET /accounts/register/ HTTP/1.1" 200 8040
+DEBUG 2025-03-18 12:27:00,690 views 23220 28256 Login view accessed
+DEBUG 2025-03-18 12:27:00,690 views 23220 28256 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['5tu48gjFMG0cWyGmhkQCp2TgrZpm1eofIxeCa6IMKhmgmZJ4Ihwggn7XfAcniQtB'], 'username': ['kumryu'], 'password': ['8717400s']}>
+DEBUG 2025-03-18 12:27:00,780 views 23220 28256 Form is valid
+DEBUG 2025-03-18 12:27:00,853 views 23220 28256 User authenticated: kumryu
+DEBUG 2025-03-18 12:27:00,880 views 23220 28256 Redirecting to: core:index
+INFO 2025-03-18 12:27:00,889 basehttp 23220 28256 "POST /accounts/login/ HTTP/1.1" 302 0
+ERROR 2025-03-18 12:27:00,905 middleware 23220 28256 Error setting current project: no such table: core_project
+ERROR 2025-03-18 12:27:01,030 log 23220 28256 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: core_project
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\core\views.py", line 32, in index
+    return render(request, 'core/index.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 199, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: core_project
+ERROR 2025-03-18 12:27:01,047 basehttp 23220 28256 "GET / HTTP/1.1" 500 200754
+INFO 2025-03-18 12:31:32,179 autoreload 23220 22244 C:\Users\USER\blueai\blueai\settings.py changed, reloading.
+INFO 2025-03-18 12:31:34,466 autoreload 3228 27244 Watching for file changes with StatReloader
+INFO 2025-03-18 12:37:33,783 autoreload 3228 27244 C:\Users\USER\blueai\core\views.py changed, reloading.
+INFO 2025-03-18 12:37:34,798 autoreload 8336 27008 Watching for file changes with StatReloader
+INFO 2025-03-18 13:04:37,549 autoreload 25396 28332 Watching for file changes with StatReloader
+ERROR 2025-03-18 13:04:40,245 middleware 25396 1756 Error setting current project: no such table: core_project
+ERROR 2025-03-18 13:04:40,364 log 25396 1756 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: core_project
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\core\views.py", line 32, in index
+    return render(request, 'core/index.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 199, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: core_project
+ERROR 2025-03-18 13:04:40,378 basehttp 25396 1756 "GET / HTTP/1.1" 500 200785
+ERROR 2025-03-18 13:04:43,682 middleware 25396 1756 Error setting current project: no such table: core_project
+DEBUG 2025-03-18 13:04:43,683 views 25396 1756 Login view accessed
+DEBUG 2025-03-18 13:04:43,684 views 25396 1756 User already authenticated: kumryu
+INFO 2025-03-18 13:04:43,688 basehttp 25396 1756 "GET /accounts/login/ HTTP/1.1" 302 0
+ERROR 2025-03-18 13:04:50,972 middleware 25396 1756 Error setting current project: no such table: core_project
+ERROR 2025-03-18 13:04:51,077 log 25396 1756 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: core_project
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\core\views.py", line 32, in index
+    return render(request, 'core/index.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 199, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: core_project
+ERROR 2025-03-18 13:04:51,088 basehttp 25396 1756 "GET / HTTP/1.1" 500 200482
+INFO 2025-03-18 13:07:18,591 autoreload 13016 30200 Watching for file changes with StatReloader
+DEBUG 2025-03-18 13:07:23,925 middleware 13016 30332 No default project found for user kumryu
+INFO 2025-03-18 13:07:23,944 basehttp 13016 30332 "GET / HTTP/1.1" 200 26859
+INFO 2025-03-18 13:07:24,385 basehttp 13016 30332 "GET /static/css/style.css HTTP/1.1" 200 33220
+INFO 2025-03-18 13:07:24,412 basehttp 13016 19156 "GET /static/js/script.js HTTP/1.1" 200 71682
+DEBUG 2025-03-18 13:07:24,500 middleware 13016 19156 No default project found for user kumryu
+DEBUG 2025-03-18 13:07:24,500 middleware 13016 30332 No default project found for user kumryu
+DEBUG 2025-03-18 13:07:24,501 views 13016 19156 Fetching tasks for user: 경민 김
+INFO 2025-03-18 13:07:24,506 basehttp 13016 30332 "GET /api/get_favorites/ HTTP/1.1" 200 2
+DEBUG 2025-03-18 13:07:24,507 views 13016 19156 Fetched 0 tasks for user: kumryu
+INFO 2025-03-18 13:07:24,509 basehttp 13016 19156 "GET /api/get_tasks/ HTTP/1.1" 200 2
+DEBUG 2025-03-18 13:07:34,951 middleware 13016 19156 No default project found for user kumryu
+INFO 2025-03-18 13:07:34,959 views 13016 19156 User kumryu logged out
+INFO 2025-03-18 13:07:34,960 basehttp 13016 19156 "POST /accounts/logout/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:07:34,965 views 13016 19156 Login view accessed
+DEBUG 2025-03-18 13:07:34,965 views 13016 19156 GET request received
+INFO 2025-03-18 13:07:34,982 basehttp 13016 19156 "GET /accounts/login/ HTTP/1.1" 200 6854
+DEBUG 2025-03-18 13:07:41,341 views 13016 19156 Login view accessed
+DEBUG 2025-03-18 13:07:41,342 views 13016 19156 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['BluuWzcEvj0RejNOd6fO1PoerLujk43QNdHXkpDijmJjrNlHPPyDQHAvz6ux1FZa'], 'username': ['kumryu'], 'password': ['8717400s']}>
+DEBUG 2025-03-18 13:07:42,524 views 13016 19156 Form errors: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>올바른 사용자 이름와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다.</li></ul></li></ul>
+INFO 2025-03-18 13:07:42,527 basehttp 13016 19156 "POST /accounts/login/ HTTP/1.1" 200 6911
+INFO 2025-03-18 13:07:47,050 basehttp 13016 19156 "GET /accounts/password/reset/ HTTP/1.1" 200 5325
+ERROR 2025-03-18 13:07:49,412 log 13016 19156 Internal Server Error: /accounts/password/reset/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 203, in password_reset_request_view
+    message = render_to_string('accounts/password_reset_email.html', {
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/password_reset_email.html
+ERROR 2025-03-18 13:07:49,416 basehttp 13016 19156 "POST /accounts/password/reset/ HTTP/1.1" 500 80266
+INFO 2025-03-18 13:07:53,632 basehttp 13016 19156 "GET /accounts/register/ HTTP/1.1" 200 8040
+INFO 2025-03-18 13:08:02,637 basehttp 13016 19156 "POST /accounts/register/ HTTP/1.1" 200 8449
+INFO 2025-03-18 13:08:04,820 basehttp 13016 19156 "GET /accounts/register/ HTTP/1.1" 200 8040
+DEBUG 2025-03-18 13:08:08,670 views 13016 19156 Login view accessed
+DEBUG 2025-03-18 13:08:08,671 views 13016 19156 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['YEnjQqXlF8jSqEmGpyohAxwliAo7Ne45awAMegoZtb2kD8Uz1hH6ppICqVoluP0p'], 'username': ['kumryu'], 'password': ['8717400s']}>
+DEBUG 2025-03-18 13:08:09,826 views 13016 30332 Login view accessed
+DEBUG 2025-03-18 13:08:09,826 views 13016 30332 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['YEnjQqXlF8jSqEmGpyohAxwliAo7Ne45awAMegoZtb2kD8Uz1hH6ppICqVoluP0p'], 'username': ['kumryu'], 'password': ['8717400s']}>
+DEBUG 2025-03-18 13:08:10,006 views 13016 19156 Form errors: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>올바른 사용자 이름와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다.</li></ul></li></ul>
+INFO 2025-03-18 13:08:10,008 basehttp 13016 19156 - Broken pipe from ('127.0.0.1', 57230)
+DEBUG 2025-03-18 13:08:11,137 views 13016 30332 Form errors: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>올바른 사용자 이름와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다.</li></ul></li></ul>
+INFO 2025-03-18 13:08:11,139 basehttp 13016 30332 "POST /accounts/login/ HTTP/1.1" 200 6911
+DEBUG 2025-03-18 13:08:15,259 views 13016 30332 Login view accessed
+DEBUG 2025-03-18 13:08:15,259 views 13016 30332 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['O6vQjbxMkW73R0BEXHpUGARBHMOAIxZm0YIjH1Yq8ZQv4u9xzqIJvs3SP7OOp8VG'], 'username': ['kumryu'], 'password': ['8717400s']}>
+DEBUG 2025-03-18 13:08:16,544 views 13016 30332 Form errors: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>올바른 사용자 이름와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다.</li></ul></li></ul>
+INFO 2025-03-18 13:08:16,546 basehttp 13016 30332 "POST /accounts/login/ HTTP/1.1" 200 6911
+DEBUG 2025-03-18 13:08:22,163 views 13016 30332 Login view accessed
+DEBUG 2025-03-18 13:08:22,164 views 13016 30332 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['2dUWxX281rgK9gRoNYvZRaA1i4dRYcXee57pVNtMPuZcmKphpHOOG2Miqpd5FNTy'], 'username': ['kumryu123456'], 'password': ['8717400s']}>
+DEBUG 2025-03-18 13:08:22,793 views 13016 30332 Form errors: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>올바른 사용자 이름와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다.</li></ul></li></ul>
+INFO 2025-03-18 13:08:22,796 basehttp 13016 30332 "POST /accounts/login/ HTTP/1.1" 200 6917
+DEBUG 2025-03-18 13:08:26,797 views 13016 30332 Login view accessed
+DEBUG 2025-03-18 13:08:26,797 views 13016 30332 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['tiGRo8Kr2js5r8XKj4uA6W1azp7ymrI0FaTkMYb5QmbxECvDVNNpVOdrHK7M32Ek'], 'username': ['kumryu'], 'password': ['8717400s!']}>
+DEBUG 2025-03-18 13:08:28,060 views 13016 30332 Form errors: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>올바른 사용자 이름와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다.</li></ul></li></ul>
+INFO 2025-03-18 13:08:28,063 basehttp 13016 30332 "POST /accounts/login/ HTTP/1.1" 200 6911
+INFO 2025-03-18 13:10:25,995 autoreload 28792 29820 Watching for file changes with StatReloader
+DEBUG 2025-03-18 13:10:30,857 views 28792 20604 Login view accessed
+DEBUG 2025-03-18 13:10:30,858 views 28792 20604 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['tiGRo8Kr2js5r8XKj4uA6W1azp7ymrI0FaTkMYb5QmbxECvDVNNpVOdrHK7M32Ek'], 'username': ['kumryu'], 'password': ['8717400s!']}>
+DEBUG 2025-03-18 13:10:31,940 views 28792 20604 Form errors: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>올바른 사용자 이름와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다.</li></ul></li></ul>
+INFO 2025-03-18 13:10:31,957 basehttp 28792 20604 "POST /accounts/login/ HTTP/1.1" 200 6911
+INFO 2025-03-18 13:10:31,992 basehttp 28792 20604 "GET /static/css/style.css HTTP/1.1" 304 0
+DEBUG 2025-03-18 13:10:35,178 views 28792 20604 Login view accessed
+DEBUG 2025-03-18 13:10:35,179 views 28792 20604 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['8jkrvadkWmingyrCYSRAPPVAmfKHRPgXkbxUT0EYKp1Pt2ZvABapEH7RuAKVyqch'], 'username': ['kumryu'], 'password': ['8717400s']}>
+DEBUG 2025-03-18 13:10:36,339 views 28792 20604 Form errors: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>올바른 사용자 이름와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다.</li></ul></li></ul>
+INFO 2025-03-18 13:10:36,343 basehttp 28792 20604 "POST /accounts/login/ HTTP/1.1" 200 6911
+DEBUG 2025-03-18 13:11:03,633 views 28792 20604 Login view accessed
+DEBUG 2025-03-18 13:11:03,633 views 28792 20604 GET request received
+INFO 2025-03-18 13:11:03,636 basehttp 28792 20604 "GET /accounts/login/ HTTP/1.1" 200 6701
+INFO 2025-03-18 13:11:06,318 basehttp 28792 20604 "GET /accounts/profile/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:11:06,324 views 28792 20604 Login view accessed
+DEBUG 2025-03-18 13:11:06,324 views 28792 20604 GET request received
+INFO 2025-03-18 13:11:06,327 basehttp 28792 20604 "GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 200 6701
+INFO 2025-03-18 13:11:08,556 basehttp 28792 20604 "GET /accounts/profile/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:11:08,565 views 28792 20604 Login view accessed
+DEBUG 2025-03-18 13:11:08,565 views 28792 20604 GET request received
+INFO 2025-03-18 13:11:08,567 basehttp 28792 20604 "GET /accounts/login/?next=/accounts/profile/ HTTP/1.1" 200 6701
+INFO 2025-03-18 13:11:12,259 basehttp 28792 20604 "POST /accounts/logout/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:11:12,264 views 28792 20604 Login view accessed
+DEBUG 2025-03-18 13:11:12,265 views 28792 20604 GET request received
+INFO 2025-03-18 13:11:12,269 basehttp 28792 20604 "GET /accounts/login/?next=/accounts/logout/ HTTP/1.1" 200 6701
+INFO 2025-03-18 13:11:18,431 basehttp 28792 20604 "POST /api/update_conversation/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:11:18,433 views 28792 17708 Processing input: '나라장터에서 RPA 공고를 검색해서 엑셀로 저장해줘' for user: Guest
+DEBUG 2025-03-18 13:11:18,436 views 28792 20604 Login view accessed
+DEBUG 2025-03-18 13:11:18,437 views 28792 20604 GET request received
+INFO 2025-03-18 13:11:18,439 basehttp 28792 20604 "GET /accounts/login/?next=/api/update_conversation/ HTTP/1.1" 200 6701
+DEBUG 2025-03-18 13:11:18,447 views 28792 17708 Task created successfully: 1
+DEBUG 2025-03-18 13:11:18,448 views 28792 17708 No current project available for task connection
+INFO 2025-03-18 13:11:18,448 basehttp 28792 17708 "POST /api/process_input/ HTTP/1.1" 200 283
+INFO 2025-03-18 13:11:18,468 basehttp 28792 17708 "POST /api/update_conversation/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:11:18,471 views 28792 17708 Login view accessed
+DEBUG 2025-03-18 13:11:18,472 views 28792 17708 GET request received
+INFO 2025-03-18 13:11:18,474 basehttp 28792 17708 "GET /accounts/login/?next=/api/update_conversation/ HTTP/1.1" 200 6701
+INFO 2025-03-18 13:11:22,277 basehttp 28792 17708 "POST /api/execute_task/ HTTP/1.1" 302 0
+INFO 2025-03-18 13:11:22,277 basehttp 28792 20604 "POST /api/update_conversation/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:11:22,281 views 28792 20604 Login view accessed
+DEBUG 2025-03-18 13:11:22,282 views 28792 17708 Login view accessed
+DEBUG 2025-03-18 13:11:22,282 views 28792 20604 GET request received
+DEBUG 2025-03-18 13:11:22,283 views 28792 17708 GET request received
+INFO 2025-03-18 13:11:22,286 basehttp 28792 20604 "GET /accounts/login/?next=/api/execute_task/ HTTP/1.1" 200 6701
+INFO 2025-03-18 13:11:22,287 basehttp 28792 17708 "GET /accounts/login/?next=/api/update_conversation/ HTTP/1.1" 200 6701
+INFO 2025-03-18 13:11:23,788 basehttp 28792 17708 "POST /api/update_conversation/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:11:23,791 views 28792 17708 Login view accessed
+DEBUG 2025-03-18 13:11:23,792 views 28792 17708 GET request received
+INFO 2025-03-18 13:11:23,794 basehttp 28792 17708 "GET /accounts/login/?next=/api/update_conversation/ HTTP/1.1" 200 6701
+INFO 2025-03-18 13:11:25,294 basehttp 28792 17708 "POST /api/update_conversation/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:11:25,297 views 28792 17708 Login view accessed
+DEBUG 2025-03-18 13:11:25,297 views 28792 17708 GET request received
+INFO 2025-03-18 13:11:25,300 basehttp 28792 17708 "GET /accounts/login/?next=/api/update_conversation/ HTTP/1.1" 200 6701
+INFO 2025-03-18 13:11:26,800 basehttp 28792 17708 "POST /api/update_conversation/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:11:26,803 views 28792 17708 Login view accessed
+DEBUG 2025-03-18 13:11:26,804 views 28792 17708 GET request received
+INFO 2025-03-18 13:11:26,806 basehttp 28792 17708 "GET /accounts/login/?next=/api/update_conversation/ HTTP/1.1" 200 6701
+INFO 2025-03-18 13:11:28,310 basehttp 28792 17708 "POST /api/update_conversation/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:11:28,312 views 28792 17708 Login view accessed
+DEBUG 2025-03-18 13:11:28,314 views 28792 17708 GET request received
+INFO 2025-03-18 13:11:28,316 basehttp 28792 17708 "GET /accounts/login/?next=/api/update_conversation/ HTTP/1.1" 200 6701
+INFO 2025-03-18 13:11:28,813 basehttp 28792 17708 "POST /api/update_conversation/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:11:28,815 views 28792 17708 Login view accessed
+DEBUG 2025-03-18 13:11:28,815 views 28792 17708 GET request received
+INFO 2025-03-18 13:11:28,818 basehttp 28792 17708 "GET /accounts/login/?next=/api/update_conversation/ HTTP/1.1" 200 6701
+WARNING 2025-03-18 13:11:33,423 log 28792 17708 Not Found: /api/get_task/1742271078406/
+WARNING 2025-03-18 13:11:33,424 basehttp 28792 17708 "GET /api/get_task/1742271078406/ HTTP/1.1" 404 3491
+INFO 2025-03-18 13:12:09,534 basehttp 28792 17708 "GET / HTTP/1.1" 200 24248
+INFO 2025-03-18 13:12:09,633 basehttp 28792 17708 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-03-18 13:12:09,640 basehttp 28792 17708 "GET /static/js/script.js HTTP/1.1" 304 0
+WARNING 2025-03-18 13:12:10,284 log 28792 17708 Not Found: /api/get_task/1742271078406/
+WARNING 2025-03-18 13:12:10,285 basehttp 28792 17708 "GET /api/get_task/1742271078406/ HTTP/1.1" 404 3491
+DEBUG 2025-03-18 13:12:13,455 views 28792 17708 Login view accessed
+DEBUG 2025-03-18 13:12:13,455 views 28792 17708 GET request received
+INFO 2025-03-18 13:12:13,457 basehttp 28792 17708 "GET /accounts/login/ HTTP/1.1" 200 6701
+DEBUG 2025-03-18 13:12:17,363 views 28792 17708 Login view accessed
+DEBUG 2025-03-18 13:12:17,364 views 28792 17708 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['N3lDU2tqiCddW1BEMry9RuHFpYeMl18iZVy6iSU46FWF9v9xoaRYGmTWxje02C4C'], 'username': ['kumryu'], 'password': ['8717400s']}>
+DEBUG 2025-03-18 13:12:18,661 views 28792 17708 Form errors: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>올바른 사용자 이름와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다.</li></ul></li></ul>
+INFO 2025-03-18 13:12:18,664 basehttp 28792 17708 "POST /accounts/login/ HTTP/1.1" 200 6911
+DEBUG 2025-03-18 13:12:25,319 views 28792 17708 Login view accessed
+DEBUG 2025-03-18 13:12:25,320 views 28792 17708 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['KAh3IHH5j3iiX4MWueIXvEe5CLQ7rLZDWsuw6x8J761KaykP6X1MkwqmK6Ql8mVX'], 'username': ['kumryu123456@gmail.com'], 'password': ['8717400s']}>
+DEBUG 2025-03-18 13:12:26,608 views 28792 17708 Form errors: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>올바른 사용자 이름와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다.</li></ul></li></ul>
+INFO 2025-03-18 13:12:26,610 basehttp 28792 17708 "POST /accounts/login/ HTTP/1.1" 200 6927
+INFO 2025-03-18 13:28:08,991 autoreload 29100 24928 Watching for file changes with StatReloader
+INFO 2025-03-18 13:28:10,241 basehttp 29100 1752 "GET / HTTP/1.1" 200 24248
+INFO 2025-03-18 13:28:10,322 basehttp 29100 20584 "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-03-18 13:28:10,323 basehttp 29100 1752 "GET /static/css/style.css HTTP/1.1" 304 0
+WARNING 2025-03-18 13:28:10,960 log 29100 1752 Not Found: /api/get_task/1742271078406/
+WARNING 2025-03-18 13:28:10,960 basehttp 29100 1752 "GET /api/get_task/1742271078406/ HTTP/1.1" 404 3491
+DEBUG 2025-03-18 13:28:12,716 views 29100 1752 Login view accessed
+DEBUG 2025-03-18 13:28:12,717 views 29100 1752 GET request received
+INFO 2025-03-18 13:28:12,727 basehttp 29100 1752 "GET /accounts/login/ HTTP/1.1" 200 6701
+DEBUG 2025-03-18 13:28:16,998 views 29100 1752 Login view accessed
+DEBUG 2025-03-18 13:28:16,998 views 29100 1752 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['P3G1I8f6ZBYjyQnsvX2FDXghp51rLrDF1VTu6YGKNEHLLkVl7GlusPsyxq1Fs2zZ'], 'username': ['kumryu'], 'password': ['8717400s']}>
+DEBUG 2025-03-18 13:28:17,548 views 29100 1752 Form is valid
+DEBUG 2025-03-18 13:28:18,101 views 29100 1752 User authenticated: kumryu
+DEBUG 2025-03-18 13:28:18,126 views 29100 1752 Redirecting to: core:index
+INFO 2025-03-18 13:28:18,134 basehttp 29100 1752 "POST /accounts/login/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:28:18,143 middleware 29100 1752 No default project found for user kumryu
+INFO 2025-03-18 13:28:18,148 basehttp 29100 1752 "GET / HTTP/1.1" 200 26859
+DEBUG 2025-03-18 13:28:18,197 middleware 29100 1752 No default project found for user kumryu
+DEBUG 2025-03-18 13:28:18,198 views 29100 1752 Fetching tasks for user: 경민 김
+DEBUG 2025-03-18 13:28:18,201 views 29100 1752 Fetched 1 tasks for user: kumryu
+INFO 2025-03-18 13:28:18,206 basehttp 29100 1752 "GET /api/get_tasks/ HTTP/1.1" 200 1128
+DEBUG 2025-03-18 13:28:18,222 middleware 29100 1752 No default project found for user kumryu
+WARNING 2025-03-18 13:28:18,233 log 29100 1752 Not Found: /api/get_task/1742271078406/
+DEBUG 2025-03-18 13:28:18,233 middleware 29100 20584 No default project found for user kumryu
+WARNING 2025-03-18 13:28:18,235 basehttp 29100 1752 "GET /api/get_task/1742271078406/ HTTP/1.1" 404 3491
+INFO 2025-03-18 13:28:18,236 basehttp 29100 20584 "GET /api/get_favorites/ HTTP/1.1" 200 2
+DEBUG 2025-03-18 13:28:18,684 middleware 29100 20584 No default project found for user kumryu
+WARNING 2025-03-18 13:28:18,690 log 29100 20584 Not Found: /api/get_task/1742271078406/
+WARNING 2025-03-18 13:28:18,692 basehttp 29100 20584 "GET /api/get_task/1742271078406/ HTTP/1.1" 404 3491
+DEBUG 2025-03-18 13:28:24,934 middleware 29100 20584 No default project found for user kumryu
+INFO 2025-03-18 13:28:24,940 views 29100 20584 User kumryu logged out
+INFO 2025-03-18 13:28:24,941 basehttp 29100 20584 "POST /accounts/logout/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:28:24,944 views 29100 20584 Login view accessed
+DEBUG 2025-03-18 13:28:24,945 views 29100 20584 GET request received
+INFO 2025-03-18 13:28:24,946 basehttp 29100 20584 "GET /accounts/login/ HTTP/1.1" 200 6854
+INFO 2025-03-18 13:28:26,780 basehttp 29100 20584 "GET /accounts/register/ HTTP/1.1" 200 8040
+DEBUG 2025-03-18 13:28:32,253 views 29100 20584 Login view accessed
+DEBUG 2025-03-18 13:28:32,253 views 29100 20584 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['tYQbDFJWpIwTzeCsakgYVD2eArRu9gMsDqhdw0G4yJQwVEMYKVui09gNIHVSYmOR'], 'username': ['kumryu123456'], 'password': ['8717400s']}>
+DEBUG 2025-03-18 13:28:32,764 views 29100 20584 Form is valid
+DEBUG 2025-03-18 13:28:33,304 views 29100 20584 User authenticated: kumryu123456
+DEBUG 2025-03-18 13:28:33,325 views 29100 20584 Redirecting to: core:index
+INFO 2025-03-18 13:28:33,333 basehttp 29100 20584 "POST /accounts/login/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:28:33,345 middleware 29100 20584 No default project found for user kumryu123456
+INFO 2025-03-18 13:28:33,357 basehttp 29100 20584 "GET / HTTP/1.1" 200 26857
+DEBUG 2025-03-18 13:28:33,404 middleware 29100 20584 No default project found for user kumryu123456
+DEBUG 2025-03-18 13:28:33,405 views 29100 20584 Fetching tasks for user: kumryu123456
+DEBUG 2025-03-18 13:28:33,407 views 29100 20584 Fetched 1 tasks for user: kumryu123456
+INFO 2025-03-18 13:28:33,412 basehttp 29100 20584 "GET /api/get_tasks/ HTTP/1.1" 200 1128
+DEBUG 2025-03-18 13:28:33,422 middleware 29100 1752 No default project found for user kumryu123456
+INFO 2025-03-18 13:28:33,425 basehttp 29100 1752 "GET /api/get_favorites/ HTTP/1.1" 200 2
+DEBUG 2025-03-18 13:28:51,741 middleware 29100 2212 No default project found for user kumryu123456
+INFO 2025-03-18 13:28:51,754 basehttp 29100 2212 "GET /api/get_task/1/ HTTP/1.1" 200 1156
+DEBUG 2025-03-18 13:28:51,776 middleware 29100 2212 No default project found for user kumryu123456
+DEBUG 2025-03-18 13:28:51,776 views 29100 2212 Updating conversation for task 1
+WARNING 2025-03-18 13:28:51,782 views 29100 2212 User kumryu123456 attempted to update task 1 without permission
+WARNING 2025-03-18 13:28:51,782 log 29100 2212 Forbidden: /api/update_conversation/
+WARNING 2025-03-18 13:28:51,782 basehttp 29100 2212 "POST /api/update_conversation/ HTTP/1.1" 403 102
+DEBUG 2025-03-18 13:28:58,876 middleware 29100 2212 No default project found for user kumryu123456
+INFO 2025-03-18 13:28:58,886 views 29100 2212 User kumryu123456 logged out
+INFO 2025-03-18 13:28:58,887 basehttp 29100 2212 "POST /accounts/logout/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:28:58,891 views 29100 2212 Login view accessed
+DEBUG 2025-03-18 13:28:58,891 views 29100 2212 GET request received
+INFO 2025-03-18 13:28:58,893 basehttp 29100 2212 "GET /accounts/login/ HTTP/1.1" 200 6854
+INFO 2025-03-18 13:29:00,171 basehttp 29100 2212 "GET /accounts/register/ HTTP/1.1" 200 8040
+ERROR 2025-03-18 13:29:21,446 log 29100 2212 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 129, in login
+    backend = backend or user.backend
+                         ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'backend'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 54, in register_view
+    login(request, user)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 135, in login
+    raise ValueError(
+ValueError: You have multiple authentication backends configured and therefore must provide the `backend` argument or set the `backend` attribute on the user.
+ERROR 2025-03-18 13:29:21,449 basehttp 29100 2212 "POST /accounts/register/ HTTP/1.1" 500 79243
+INFO 2025-03-18 13:29:41,411 basehttp 29100 2212 "POST /accounts/register/ HTTP/1.1" 200 8287
+INFO 2025-03-18 13:30:01,029 basehttp 29100 2212 "POST /accounts/register/ HTTP/1.1" 200 8287
+INFO 2025-03-18 13:30:02,473 basehttp 29100 2212 "GET /accounts/register/ HTTP/1.1" 200 8040
+INFO 2025-03-18 13:30:04,042 basehttp 29100 2212 "GET /accounts/register/ HTTP/1.1" 200 8040
+ERROR 2025-03-18 13:30:13,771 log 29100 2212 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 129, in login
+    backend = backend or user.backend
+                         ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'backend'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 54, in register_view
+    login(request, user)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 135, in login
+    raise ValueError(
+ValueError: You have multiple authentication backends configured and therefore must provide the `backend` argument or set the `backend` attribute on the user.
+ERROR 2025-03-18 13:30:13,775 basehttp 29100 2212 "POST /accounts/register/ HTTP/1.1" 500 79246
+DEBUG 2025-03-18 13:30:36,573 views 29100 2212 Login view accessed
+DEBUG 2025-03-18 13:30:36,573 views 29100 2212 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['C3KKONfZWL3syLHsKPAosZ5vDuLiD6zoHgag5hp4Bz2OIugFFUuB7liTgxoLqYBT'], 'username': ['hi'], 'password': ['87123']}>
+DEBUG 2025-03-18 13:30:37,691 views 29100 2212 Form errors: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>올바른 사용자 이름와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다.</li></ul></li></ul>
+INFO 2025-03-18 13:30:37,707 basehttp 29100 2212 "POST /accounts/login/ HTTP/1.1" 200 6907
+INFO 2025-03-18 13:30:53,161 basehttp 29100 2212 "GET /accounts/register/ HTTP/1.1" 200 8040
+INFO 2025-03-18 13:31:02,200 basehttp 29100 2212 "POST /accounts/register/ HTTP/1.1" 200 8432
+INFO 2025-03-18 13:31:09,620 basehttp 29100 2212 "POST /accounts/register/ HTTP/1.1" 200 8270
+INFO 2025-03-18 13:31:19,948 basehttp 29100 2212 "POST /accounts/register/ HTTP/1.1" 200 8498
+ERROR 2025-03-18 13:31:25,524 log 29100 2212 Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 129, in login
+    backend = backend or user.backend
+                         ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'backend'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\blueai\accounts\views.py", line 54, in register_view
+    login(request, user)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\__init__.py", line 135, in login
+    raise ValueError(
+ValueError: You have multiple authentication backends configured and therefore must provide the `backend` argument or set the `backend` attribute on the user.
+ERROR 2025-03-18 13:31:25,540 basehttp 29100 2212 "POST /accounts/register/ HTTP/1.1" 500 79236
+INFO 2025-03-18 13:36:14,348 autoreload 29100 24928 C:\Users\USER\blueai\accounts\views.py changed, reloading.
+INFO 2025-03-18 13:36:16,094 autoreload 24300 29300 Watching for file changes with StatReloader
+INFO 2025-03-18 13:36:24,423 basehttp 24300 27164 "POST /accounts/register/ HTTP/1.1" 200 8441
+INFO 2025-03-18 13:36:24,460 basehttp 24300 27164 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2025-03-18 13:36:39,822 basehttp 24300 27164 "POST /accounts/register/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:36:39,822 middleware 24300 27164 Default project set to hi hihi님의 BlueAI for user 12345
+INFO 2025-03-18 13:36:39,848 basehttp 24300 27164 "GET / HTTP/1.1" 200 27391
+INFO 2025-03-18 13:36:39,875 basehttp 24300 27164 "GET /static/js/script.js HTTP/1.1" 304 0
+DEBUG 2025-03-18 13:36:39,895 middleware 24300 27164 Current project set to hi hihi님의 BlueAI for user 12345
+DEBUG 2025-03-18 13:36:39,895 middleware 24300 16936 Current project set to hi hihi님의 BlueAI for user 12345
+DEBUG 2025-03-18 13:36:39,895 views 24300 27164 Fetching tasks for user: hi hihi
+INFO 2025-03-18 13:36:39,904 basehttp 24300 16936 "GET /api/get_favorites/ HTTP/1.1" 200 2
+DEBUG 2025-03-18 13:36:39,905 views 24300 27164 Fetched 0 tasks for project: f475c9d2-f7a4-4235-ac01-46bc40592480
+INFO 2025-03-18 13:36:39,906 basehttp 24300 27164 "GET /api/get_tasks/ HTTP/1.1" 200 2
+DEBUG 2025-03-18 13:36:53,194 middleware 24300 27164 Current project set to hi hihi님의 BlueAI for user 12345
+INFO 2025-03-18 13:36:53,202 views 24300 27164 User 12345 logged out
+INFO 2025-03-18 13:36:53,204 basehttp 24300 27164 "POST /accounts/logout/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:36:53,208 views 24300 27164 Login view accessed
+DEBUG 2025-03-18 13:36:53,208 views 24300 27164 GET request received
+INFO 2025-03-18 13:36:53,211 basehttp 24300 27164 "GET /accounts/login/ HTTP/1.1" 200 6968
+DEBUG 2025-03-18 13:36:57,904 views 24300 27164 Login view accessed
+DEBUG 2025-03-18 13:36:57,904 views 24300 27164 POST request received with data: <QueryDict: {'csrfmiddlewaretoken': ['3OGA4KqhtnKhKqpwExojl3QjfS5n3xrQHMQInKIPnNJNMfrbtqPGRA9y2PWyDqTz'], 'username': ['kumryu'], 'password': ['8717400s']}>
+DEBUG 2025-03-18 13:36:58,411 views 24300 27164 Form is valid
+DEBUG 2025-03-18 13:36:58,952 views 24300 27164 User authenticated: kumryu
+DEBUG 2025-03-18 13:36:58,953 views 24300 27164 Redirecting to: core:index
+INFO 2025-03-18 13:36:58,971 basehttp 24300 27164 "POST /accounts/login/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:36:58,971 middleware 24300 27164 No default project found for user kumryu
+INFO 2025-03-18 13:36:58,991 basehttp 24300 27164 "GET / HTTP/1.1" 200 26859
+DEBUG 2025-03-18 13:36:59,053 middleware 24300 16936 No default project found for user kumryu
+DEBUG 2025-03-18 13:36:59,053 middleware 24300 27164 No default project found for user kumryu
+DEBUG 2025-03-18 13:36:59,053 views 24300 27164 Fetching tasks for user: 경민 김
+INFO 2025-03-18 13:36:59,065 basehttp 24300 16936 "GET /api/get_favorites/ HTTP/1.1" 200 2
+DEBUG 2025-03-18 13:36:59,066 views 24300 27164 Fetched 1 tasks for user: kumryu
+INFO 2025-03-18 13:36:59,070 basehttp 24300 27164 "GET /api/get_tasks/ HTTP/1.1" 200 1128
+DEBUG 2025-03-18 13:37:07,087 middleware 24300 27164 No default project found for user kumryu
+INFO 2025-03-18 13:37:07,097 views 24300 27164 User kumryu logged out
+INFO 2025-03-18 13:37:07,098 basehttp 24300 27164 "POST /accounts/logout/ HTTP/1.1" 302 0
+DEBUG 2025-03-18 13:37:07,103 views 24300 27164 Login view accessed
+DEBUG 2025-03-18 13:37:07,103 views 24300 27164 GET request received
+INFO 2025-03-18 13:37:07,105 basehttp 24300 27164 "GET /accounts/login/ HTTP/1.1" 200 6854

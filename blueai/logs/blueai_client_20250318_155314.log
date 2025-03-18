@@ -1,0 +1,78 @@
+2025-03-18 15:53:14,883 - root - INFO - 로그 파일 경로: C:\Users\USER\BlueAI\logs\blueai_client_20250318_155314.log
+2025-03-18 15:53:14,883 - root - INFO - 로깅 레벨 설정됨: INFO
+2025-03-18 15:53:14,883 - __main__ - INFO - BlueAI 클라이언트 CLI 시작
+2025-03-18 15:53:14,884 - automation.browser_manager - INFO - 브라우저 초기화 중 (타입: chromium, 헤드리스: False)
+2025-03-18 15:53:15,780 - automation.browser_manager - INFO - 브라우저가 성공적으로 초기화되었습니다.
+2025-03-18 15:53:26,079 - automation.task_parser - INFO - 명령어 파싱 시작: 네이버에서 서울 날씨 검색해줘
+2025-03-18 15:53:26,080 - automation.task_parser - INFO - 선택된 작업: naver_weather_task (점수: 0.50)
+2025-03-18 15:53:26,081 - automation.task_parser - INFO - 작업 실행: NaverWeatherTask, 매개변수: {'location': '네이버에서 서울', 'day': 'today', 'details': 'false'}
+2025-03-18 15:53:26,082 - automation.tasks.naver_weather_task - INFO - 네이버 날씨 작업 실행: {'location': '네이버에서 서울', 'day': 'today', 'details': 'false'}
+2025-03-18 15:53:26,407 - automation.tasks.naver_weather_task - INFO - 네이버 접속 중...
+2025-03-18 15:53:28,928 - automation.tasks.naver_weather_task - INFO - 검색어 입력: 네이버에서 서울 날씨
+2025-03-18 15:53:31,376 - automation.tasks.naver_weather_task - INFO - 날씨 정보 추출 중...
+2025-03-18 15:53:31,654 - automation.tasks.naver_weather_task - INFO - 날씨 정보 추출 완료: 네이버에서 서울
+2025-03-18 15:53:38,030 - automation.task_parser - INFO - 명령어 파싱 시작: 부산의 오늘 날씨 알려줘
+2025-03-18 15:53:38,031 - automation.task_parser - INFO - 선택된 작업: naver_weather_task (점수: 0.50)
+2025-03-18 15:53:38,032 - automation.task_parser - INFO - 작업 실행: NaverWeatherTask, 매개변수: {'location': '부산의 오늘', 'day': 'today', 'details': 'false'}
+2025-03-18 15:53:38,032 - automation.tasks.naver_weather_task - INFO - 네이버 날씨 작업 실행: {'location': '부산의 오늘', 'day': 'today', 'details': 'false'}
+2025-03-18 15:53:38,163 - automation.tasks.naver_weather_task - INFO - 네이버 접속 중...
+2025-03-18 15:53:40,174 - automation.tasks.naver_weather_task - INFO - 검색어 입력: 부산의 오늘 날씨
+2025-03-18 15:53:42,409 - automation.tasks.naver_weather_task - INFO - 날씨 정보 추출 중...
+2025-03-18 15:53:42,723 - automation.tasks.naver_weather_task - INFO - 날씨 정보 추출 완료: 부산의 오늘
+2025-03-18 15:53:48,844 - automation.task_parser - INFO - 명령어 파싱 시작: 구글에서 사과 이미지 검색해줘
+2025-03-18 15:53:48,844 - automation.task_parser - INFO - 선택된 작업: google_image_task (점수: 0.70)
+2025-03-18 15:53:48,846 - automation.task_parser - INFO - 작업 실행: GoogleImageTask, 매개변수: {'search_term': '사과', 'count': 1, 'save_path': 'C:\\Users\\USER\\Pictures\\BlueAI', 'preview_only': 'true'}
+2025-03-18 15:53:48,846 - automation.tasks.google_image_task - INFO - 구글 이미지 작업 실행: {'search_term': '사과', 'count': 1, 'save_path': 'C:\\Users\\USER\\Pictures\\BlueAI', 'preview_only': 'true'}
+2025-03-18 15:53:48,965 - automation.tasks.google_image_task - INFO - 구글 이미지 검색 페이지 접속 중...
+2025-03-18 15:53:51,581 - automation.tasks.google_image_task - INFO - 검색어 입력: 사과
+2025-03-18 15:54:05,554 - automation.tasks.google_image_task - ERROR - 구글 이미지 작업 실행 중 오류: Page.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("input[name=\"q\"]")
+
+2025-03-18 15:54:06,366 - automation.task_parser - INFO - 명령어 파싱 시작: 강아지 사진 3개 다운로드해줘
+2025-03-18 15:54:06,366 - automation.task_parser - INFO - 선택된 작업: google_image_task (점수: 0.50)
+2025-03-18 15:54:06,366 - automation.task_parser - INFO - 작업 실행: GoogleImageTask, 매개변수: {'search_term': '강아지', 'count': 3, 'save_path': 'C:\\Users\\USER\\Pictures\\BlueAI', 'preview_only': 'false'}
+2025-03-18 15:54:06,367 - automation.tasks.google_image_task - INFO - 구글 이미지 작업 실행: {'search_term': '강아지', 'count': 3, 'save_path': 'C:\\Users\\USER\\Pictures\\BlueAI', 'preview_only': 'false'}
+2025-03-18 15:54:06,496 - automation.tasks.google_image_task - INFO - 구글 이미지 검색 페이지 접속 중...
+2025-03-18 15:54:08,389 - automation.tasks.google_image_task - INFO - 검색어 입력: 강아지
+2025-03-18 15:54:17,935 - automation.tasks.google_image_task - ERROR - 구글 이미지 작업 실행 중 오류: Page.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("input[name=\"q\"]")
+
+2025-03-18 15:54:18,623 - automation.task_parser - INFO - 명령어 파싱 시작: 유튜브에서 인공지능 강의 검색해줘유튜브에서 인공지능 강의 검색해줘
+2025-03-18 15:54:18,623 - automation.task_parser - INFO - 선택된 작업: youtube_search_task (점수: 0.30)
+2025-03-18 15:54:18,624 - automation.task_parser - INFO - 작업 실행: YouTubeSearchTask, 매개변수: {'search_term': '인공지능 강의 검색해줘유튜브에서 인공지능 강의', 'max_results': 5, 'sort_by': 'relevance', 'save_path': 'C:\\Users\\USER\\Documents\\BlueAI'}
+2025-03-18 15:54:18,624 - automation.tasks.youtube_search_task - INFO - 유튜브 검색 작업 실행: {'search_term': '인공지능 강의 검색해줘유튜브에서 인공지능 강의', 'max_results': 5, 'sort_by': 'relevance', 'save_path': 'C:\\Users\\USER\\Documents\\BlueAI'}
+2025-03-18 15:54:18,743 - automation.tasks.youtube_search_task - INFO - 유튜브 접속 중...
+2025-03-18 15:54:18,979 - automation.tasks.youtube_search_task - ERROR - 유튜브 검색 작업 실행 중 오류: Page.goto: net::ERR_CONNECTION_ABORTED at https://www.youtube.com/
+Call log:
+  - navigating to "https://www.youtube.com/", waiting until "load"
+
+2025-03-18 15:54:20,189 - automation.task_parser - INFO - 명령어 파싱 시작: 유튜브에서 인공지능 강의 검색해줘
+2025-03-18 15:54:20,189 - automation.task_parser - INFO - 선택된 작업: youtube_search_task (점수: 0.30)
+2025-03-18 15:54:20,189 - automation.task_parser - INFO - 작업 실행: YouTubeSearchTask, 매개변수: {'search_term': '인공지능 강의', 'max_results': 5, 'sort_by': 'relevance', 'save_path': 'C:\\Users\\USER\\Documents\\BlueAI'}
+2025-03-18 15:54:20,189 - automation.tasks.youtube_search_task - INFO - 유튜브 검색 작업 실행: {'search_term': '인공지능 강의', 'max_results': 5, 'sort_by': 'relevance', 'save_path': 'C:\\Users\\USER\\Documents\\BlueAI'}
+2025-03-18 15:54:20,316 - automation.tasks.youtube_search_task - INFO - 유튜브 접속 중...
+2025-03-18 15:54:20,547 - automation.tasks.youtube_search_task - ERROR - 유튜브 검색 작업 실행 중 오류: Page.goto: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://www.youtube.com/
+Call log:
+  - navigating to "https://www.youtube.com/", waiting until "load"
+
+2025-03-18 15:54:25,157 - automation.task_parser - INFO - 명령어 파싱 시작: 달러 환율 알려줘
+2025-03-18 15:54:25,157 - automation.task_parser - INFO - 선택된 작업: exchange_rate_task (점수: 0.50)
+2025-03-18 15:54:25,157 - automation.task_parser - INFO - 작업 실행: ExchangeRateTask, 매개변수: {'currency': '달러', 'amount': '1', 'save_results': 'false', 'save_path': 'C:\\Users\\USER\\Documents\\BlueAI'}
+2025-03-18 15:54:25,157 - automation.tasks.exchange_rate_task - INFO - 환율 조회 작업 실행: {'currency': '달러', 'amount': '1', 'save_results': 'false', 'save_path': 'C:\\Users\\USER\\Documents\\BlueAI'}
+2025-03-18 15:54:25,310 - automation.tasks.exchange_rate_task - INFO - 환율 정보 사이트 접속 중...
+2025-03-18 15:54:30,401 - automation.tasks.exchange_rate_task - ERROR - 환율 조회 작업 실행 중 오류: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.investing.com/currencies/exchange-rates-table", waiting until "load"
+
+2025-03-18 15:54:35,655 - automation.task_parser - INFO - 명령어 파싱 시작: 나라장터에서 RPA 공고 검색해줘
+2025-03-18 15:54:35,655 - automation.task_parser - INFO - 선택된 작업: nara_marketplace (점수: 0.70)
+2025-03-18 15:54:35,656 - automation.task_parser - INFO - 작업 실행: NaraMarketplaceTask, 매개변수: {'search_term': 'rpa 공고', 'max_items': 5, 'save_path': 'C:\\Users\\USER\\Documents\\BlueAI'}
+2025-03-18 15:54:35,656 - automation.tasks.nara_marketplace - INFO - 나라장터 작업 실행: {'search_term': 'rpa 공고', 'max_items': 5, 'save_path': 'C:\\Users\\USER\\Documents\\BlueAI'}
+2025-03-18 15:54:35,773 - automation.tasks.nara_marketplace - INFO - 나라장터 사이트 접속 중...
+2025-03-18 15:54:40,060 - automation.tasks.nara_marketplace - INFO - 검색어 입력: rpa 공고
+2025-03-18 15:54:41,752 - automation.tasks.nara_marketplace - ERROR - 나라장터 작업 실행 중 오류: Page.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("input[name=\"bidNm\"]")
+
