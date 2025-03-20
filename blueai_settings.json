@@ -1,0 +1,45 @@
+{
+  "mode": "balanced",
+  "browser_config": {
+    "browser_type": "edge",
+    "headless": false,
+    "auto_close": false,
+    "timeout": 30000,
+    "use_edge": true
+  },
+  "ignore_recognition_errors": false,
+  "timeouts": {
+    "navigation": 30.0,
+    "element": 5.0,
+    "action": 2.5
+  },
+  "interruption_types": [
+    "cookies",
+    "popups",
+    "ads"
+  ],
+  "recognition_strategies": [
+    "selector",
+    "template",
+    "ocr",
+    "aria"
+  ],
+  "ui_settings": {
+    "window_geometry": "AdnQywADAAAAAAEcAAAATAAABc0AAAOIAAABHQAAAGsAAAXMAAADhwAAAAAAAAAAB4AAAAEdAAAAawAABcwAAAOH",
+    "window_state": "AAAA/wAAAAD9AAAAAAAABLAAAAMHAAAABAAAAAQAAAAIAAAACPwAAAAA",
+    "mode_index": 1,
+    "browser_index": 0,
+    "headless": false,
+    "auto_close": false,
+    "handle_cookies": true,
+    "handle_popups": true,
+    "handle_ads": true,
+    "navigation_timeout": "30",
+    "element_timeout": "5",
+    "enable_selector": true,
+    "enable_template": true,
+    "enable_ocr": true,
+    "enable_aria": true,
+    "log_level": "INFO"
+  }
+}

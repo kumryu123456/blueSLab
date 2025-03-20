@@ -1,0 +1,74 @@
+[
+  {
+    "command": "구글에서 파이썬 실행",
+    "result": {
+      "error": "단계 실행 실패: input_search_term - 요소 또는 선택자가 지정되지 않음",
+      "execution_time": 1.8955166339874268,
+      "results": {
+        "find_search_box": {
+          "output": {
+            "element": null,
+            "ignored_errors": true,
+            "strategy_used": null
+          },
+          "status": "completed"
+        },
+        "handle_interruptions": {
+          "output": {
+            "result": null
+          },
+          "status": "completed"
+        },
+        "input_search_term": {
+          "output": {},
+          "status": "failed"
+        }
+      },
+      "state": {
+        "element": null,
+        "ignored_errors": true,
+        "strategy_used": null
+      },
+      "status": "failed",
+      "workflow_id": "simple_workflow"
+    },
+    "timestamp": "2025-03-20 22:52:11",
+    "type": "command"
+  },
+  {
+    "command": "구글에서 파이썬 실행",
+    "result": {
+      "error": "단계 실행 실패: input_search_term - 요소 또는 선택자가 지정되지 않음",
+      "execution_time": 1.4057977199554443,
+      "results": {
+        "find_search_box": {
+          "output": {
+            "element": null,
+            "ignored_errors": true,
+            "strategy_used": null
+          },
+          "status": "completed"
+        },
+        "handle_interruptions": {
+          "output": {
+            "result": null
+          },
+          "status": "completed"
+        },
+        "input_search_term": {
+          "output": {},
+          "status": "failed"
+        }
+      },
+      "state": {
+        "element": null,
+        "ignored_errors": true,
+        "strategy_used": null
+      },
+      "status": "failed",
+      "workflow_id": "simple_workflow"
+    },
+    "timestamp": "2025-03-20 22:47:47",
+    "type": "command"
+  }
+]
